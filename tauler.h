@@ -3,6 +3,7 @@
 
 #define MAX_COLUMNES = 8
 #define MAX_FILES = 8
+
 using namespace std;
 
 class Tauler()
@@ -14,8 +15,8 @@ private:
 
 public:
 	Tauler();
-	void inicialitzaTauler();
-	bool colisionaFigura(); //utilitza metode colisiona dins de la classe figura
+	void inicialitzaTauler(ColorFigura TaulerInicial[MAX_FILES][MAX_COLUMNES]); 
+	bool colisionaFigura(const FIgura & figura); //utilitza metode colisiona dins de la classe figura
 	int getLliures(int fila);
 	//faltan metodes
 };

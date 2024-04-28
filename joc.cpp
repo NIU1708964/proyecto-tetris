@@ -9,6 +9,16 @@ void Joc::inicialitza(const string& nomFitxer)
 	if(fitxer.is_open())
 	{
 		int tipus, fila, columna, gir;
+		fitxer >> tipus >> fila >> columna >> gir;
+
+
+
+
+
+
+
+
+
 
 
 		fitxer.close();
