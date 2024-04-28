@@ -159,45 +159,28 @@ void Figura::IniciarFigura(TipusFigura tipo_figura) {
 void Figura::Dezplazamiento_lateral(bool direccio) {
 
 	// Si direccio es true la figura se desplazara a la derecha, en cambio si es false irá a la izquierda
-	// En la clase Tauler creo que para que no choque con otra figura hay que implementar un if ( fila +/- 1 != 1) { Figura.Desplazamiento_lateral}
+	// En la clase Tauler creo que para que no choque con otra figura hay que implementar un if ( columna +/- 1 != 1) { Figura.Desplazamiento_lateral}
 
 	if (direccio)
 	{
-
-		for (int i = 0; i < altura; i++)
-		{
-			for (int k = 0; k < anchura; k++) {
-
-				if (estructura[i][k] == 1) {
-					pos_fila++;}
-			}
-		}
+		pos_columna++;
 	}
 	else {
-		for (int i = 0; i < altura; i++)
-		{
-			for (int k = 0; k < anchura; k++) {
-
-				if (estructura[i][k] == 1) { //corregir
-					pos_fila--;
-				}
-			}
-		}
+		pos_columna--;
 	}
 }
 
-void Figura::Dezplazamiento_abajo() {
+void Figura::Dezplazamiento_vertical(bool direccio) {
 
-	// En la clase Tauler creo que para que no choque con otra figura hay que implementar un if ( columna - 1 != 1) { Figura.Desplazamiento_abajo}
+	// Si direccio es true la figura se desplazara hacia arriba, en cambio si es false irá hacia abajo.
+	// En la clase Tauler creo que para que no choque con otra figura hay que implementar un if ( fila - 1 != 1) { Figura.Desplazamiento_abajo}
 
-	for (int i = 0; i < altura; i++)
+	if (direccio)
 	{
-		for (int k = 0; k < anchura; k++) {
-
-			if (estructura[i][k] = 1) {
-				pos_columna--;
-			}
-		}
+		pos_fila++;
+	}
+	else {
+		pos_fila--;
 	}
 
 }
@@ -207,10 +190,10 @@ void Figura::Girar(bool sentido) {
 
 	// Si sentido es true, sera un giro en sentido horario, si es false será en sentido antihorario
 
-	int matriz_transpuesta[MAX_ANCHURA][MAX_ALTURA];
+	int matriz_transpuesta[MAX_ALTURA][MAX_ANCHURA];
 
-	for (int i = 0; i < anchura; ++i) {
-		for (int j = 0; j < altura; ++j) {
+	for (int i = 0; i < altura; ++i) {
+		for (int j = 0; j < anchura; ++j) {
 			matriz_transpuesta[j][i] = estructura[i][j];
 
 		}
@@ -224,25 +207,29 @@ void Figura::Girar(bool sentido) {
 
 	if (sentido)
 	{
-		for (int i = 0; i < anchura; ++i) {
-			for (int j = 0; j < altura / 2; ++j) {
-				int temp = estructura[i][j];
-				estructura[i][j] = estructura[i][anchura - 1 - j];
-				estructura[i][anchura - 1 - j] = temp;
+		for (int i = 0; i < anchura/2; ++i) {
+			for (int j = 0; j < altura; ++j) {
+				int temp = estructura[j][i];
+				estructura[j][i] = estructura[j][anchura - 1 - i];
+				estructura[j][anchura - 1 - i] = temp;
 			}
 		}
 
 	}
 	else {
 
-		for (int i = 0; i < altura; ++i) {
-			for (int j = 0; j < anchura / 2; ++j) {
+		for (int i = 0; i < altura/2; ++i) {
+			for (int j = 0; j < anchura; ++j) {
 				int temp = estructura[i][j];
-				estructura[i][j] = estructura[i][altura - 1 - j];
-				estructura[i][altura - 1 - j] = temp;
+				estructura[i][j] = estructura[altura - 1 - i][j];
+				estructura[altura - 1 - i][j] = temp;
 			}
 		}
 	}
 
 }
+
+
+
+
 

@@ -39,18 +39,19 @@ public:
 	void LlenarFigura(int parametro, int anch, int alt);
 	void IniciarFigura(TipusFigura tipo_figura);
 	void Dezplazamiento_lateral(bool direccio);
-	void Dezplazamiento_abajo();
+	void Dezplazamiento_vertical(bool direccio);
 	void Girar(bool sentido);
 
 private:
 
 	TipusFigura tipo_figura;
 	ColorFigura color_figura;
+	int pos_fila; //
+	int pos_columna; // Comienza en el max de altura del tablero
 	int anchura;
 	int altura;
 	int estructura[MAX_ALTURA][MAX_ANCHURA];
-	int pos_fila; // 
-	int pos_columna; //
+
 
 	
 
