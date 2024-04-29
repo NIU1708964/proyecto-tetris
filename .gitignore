@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+/figura.h
+/figura.cpp
+/joc.cpp
+/joc.h
