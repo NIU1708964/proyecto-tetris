@@ -49,13 +49,7 @@ private:
 	int anchura;
 	int altura;
 	int estructura[MAX_ALTURA][MAX_ANCHURA];
-	int pos_fila; // 
-	int pos_columna; //
-
-	
-
-
-	
-
+	int pos_fila; 
+	int pos_columna; 
 
 }

@@ -243,6 +243,5 @@ void Figura::Girar(bool sentido) {
 			}
 		}
 	}
-
 }
 
