@@ -1,5 +1,4 @@
 #include "tauler.h"
-#include "figura.h"
 #include <iostream>
 
 using namespace std;
@@ -70,7 +69,7 @@ int Tauler::colocaFigura(const Figura& figura)
     ColorFigura color = figura.getColor();
     figura.getEstructura(estructura);
     int filaTauler = figura.getFila() - 1;
-    int filaEstructura = 0
+    int filaEstructura = 0;
 
     while(filaEstructura < figura.getAltura())
     {
@@ -113,4 +112,13 @@ void Tauler::baixa(int fila)
         m_tauler[0][i + 1] = COLOR_NEGRE;
     }
     m_lliures[0] = MAX_COL;
+}
+
+void Tauler::getTauler(ColorFigura tauler[MAX_FILA][MAX_COL])
+{
+    for (int i = 0; i < MAX_FILA; i++)
+    {
+        for (int j = 0; j < MAX_COL; j++)
+            tauler[i][j] = m_tauler[i][j + 1];
+    }
 }
