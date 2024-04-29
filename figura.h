@@ -35,21 +35,26 @@ class Figura {
 
 public:
 
-	void FiguraVacia();
-	void LlenarFigura(int parametro, int anch, int alt);
-	void IniciarFigura(TipusFigura tipo_figura);
-	void Dezplazamiento_lateral(bool direccio);
-	void Dezplazamiento_abajo();
-	void Girar(bool sentido);
+	void figuraVacia();
+	void llenarFigura(int parametro, int anch, int alt);
+	
+	void iniciarFigura(TipusFigura tipo_figura);
+	void desplazamientoLateral(bool direccio);
+	void desplazamientoVertical(bool direccio);
+	void girar(bool sentido);
+
+	int getEstructura(int estructura[MAX_ALTURA][MAX_ANCHURA])const;
+	int getAltura() const { return m_altura; }
+	ColorFigura getColor() const { return m_colorFigura; }
+
 
 private:
 
-	TipusFigura tipo_figura;
-	ColorFigura color_figura;
-	int anchura;
-	int altura;
-	int estructura[MAX_ALTURA][MAX_ANCHURA];
-	int pos_fila; 
-	int pos_columna; 
-
+	TipusFigura m_tipoFigura;
+	ColorFigura m_colorFigura;
+	int m_pos_fila;
+	int m_pos_columna; // Comienza en el max de altura del tablero
+	int m_anchura;
+	int m_altura;
+	int m_estructura[MAX_ALTURA][MAX_ANCHURA];
 }

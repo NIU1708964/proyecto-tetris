@@ -19,5 +19,7 @@ public:
 	void inicialitzaTauler(ColorFigura tauler[MAX_FILES][MAX_COLUMNES]); 
 	bool colisionaFigura(const Figura& figura);
 	int colocaFigura();
+
+	void baixa(int fila);
 };
 #endif

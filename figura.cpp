@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Figura.h"
 
-void Figura::FiguraVacia() {
+void Figura::figuraVacia() {
 
 	for (int i = 0; i < altura; i++)
 	{
@@ -13,7 +13,7 @@ void Figura::FiguraVacia() {
 
 }
 
-void Figura::LlenarFigura(int parametro, int anch, int alt) {
+void Figura::llenarFigura(int parametro, int anch, int alt) {
 
 	for (int i = 0; i < alt; i++)
 	{
@@ -26,29 +26,30 @@ void Figura::LlenarFigura(int parametro, int anch, int alt) {
 }
 
 
-void Figura::IniciarFigura(TipusFigura tipo_figura) {
+void Figura::iniciarFigura(TipusFigura tipoFigura) {
 
 
-	switch (tipo_figura)
+	switch (tipoFigura)
 	{
 	case FIGURA_O:
-		altura = 2;
-		anchura = 2;
 
-		FiguraVacia();
-		LlenarFigura(1, altura, anchura);
+		m_altura = 2;
+		m_anchura = 2;
 
-		color_figura = COLOR_GROC;
+		figuraVacia();
+		llenarFigura(1, altura, anchura);
+
+		colorFigura = COLOR_GROC;
 
 		break;
 
 
 	case FIGURA_I:
 
-		altura = 4;
-		anchura = 4;
+		m_altura = 4;
+		m_anchura = 4;
 
-		FiguraVacia();
+		figuraVacia();
 
 		int i = 1;
 
@@ -57,16 +58,16 @@ void Figura::IniciarFigura(TipusFigura tipo_figura) {
 			estructura[i][k] = 1;
 		}
 
-		color_figura = COLOR_BLAUCEL;
+		colorFigura = COLOR_BLAUCEL;
 
 		break;
 
 	case FIGURA_T:
 
-		altura = 3;
-		anchura = 3;
+		m_altura = 3;
+		m_anchura = 3;
 
-		FiguraVacia();
+		figuraVacia();
 
 		estructura[0][1] = 1;
 
@@ -76,16 +77,16 @@ void Figura::IniciarFigura(TipusFigura tipo_figura) {
 
 			estructura[i][k] = 1;
 		}
-		color_figura = COLOR_MAGENTA;
+		colorFigura = COLOR_MAGENTA;
 
 		break;
 
 	case FIGURA_L:
 
-		altura = 3;
-		anchura = 3;
+		m_altura = 3;
+		m_anchura = 3;
 
-		FiguraVacia();
+		figuraVacia();
 
 		estructura[0][2] = 1;
 
@@ -96,16 +97,16 @@ void Figura::IniciarFigura(TipusFigura tipo_figura) {
 			estructura[i][k] = 1;
 		}
 
-		color_figura = COLOR_TARONJA;
+		colorFigura = COLOR_TARONJA;
 
 		break;
 
 	case FIGURA_J:
 
-		altura = 3;
-		anchura = 3;
+		m_altura = 3;
+		m_anchura = 3;
 
-		FiguraVacia();
+		figuraVacia();
 
 		estructura[0][0] = 1;
 
@@ -116,132 +117,121 @@ void Figura::IniciarFigura(TipusFigura tipo_figura) {
 			estructura[i][k] = 1;
 		}
 
-		color_figura = COLOR_BLAUFOSC;
+		colorFigura = COLOR_BLAUFOSC;
 
 		break;
 
 	case FIGURA_Z:
 
-		altura = 3;
-		anchura = 3;
+		m_altura = 3;
+		m_anchura = 3;
 
-		FiguraVacia();
+		figuraVacia();
 
 		estructura[0][0] = 1;
 		estructura[0][1] = 1;
 		estructura[1][1] = 1;
 		estructura[1][2] = 1;
 
-		color_figura = COLOR_VERMELL;
+		colorFigura = COLOR_VERMELL;
 
 		break;
 
 
 	case FIGURA_S:
 
-		altura = 3;
-		anchura = 3;
+		m_altura = 3;
+		m_anchura = 3;
 
-		FiguraVacia();
+		figuraVacia();
 
 		estructura[1][0] = 1;
 		estructura[0][1] = 1;
 		estructura[1][1] = 1;
 		estructura[0][2] = 1;
 
-		color_figura = COLOR_VERD;
+		colorFigura = COLOR_VERD;
 
 		break;
 
 	}
 }
 
-void Figura::Dezplazamiento_lateral(bool direccio) {
+void Figura::desplazamientoLateral(bool direccio) {
 
 	// Si direccio es true la figura se desplazara a la derecha, en cambio si es false irá a la izquierda
-	// En la clase Tauler creo que para que no choque con otra figura hay que implementar un if ( fila +/- 1 != 1) { Figura.Desplazamiento_lateral}
+	// En la clase Tauler creo que para que no choque con otra figura hay que implementar un if ( columna +/- 1 != 1) { Figura.Desplazamiento_lateral}
 
 	if (direccio)
 	{
-
-		for (int i = 0; i < altura; i++)
-		{
-			for (int k = 0; k < anchura; k++) {
-
-				if (estructura[i][k] == 1) {
-					pos_fila++;}
-			}
-		}
+		pos_columna++;
 	}
 	else {
-		for (int i = 0; i < altura; i++)
-		{
-			for (int k = 0; k < anchura; k++) {
-
-				if (estructura[i][k] == 1) { //corregir
-					pos_fila--;
-				}
-			}
-		}
+		pos_columna--;
 	}
 }
 
-void Figura::Dezplazamiento_abajo() {
+void Figura::desplazamientoVertical(bool direccio) {
 
-	// En la clase Tauler creo que para que no choque con otra figura hay que implementar un if ( columna - 1 != 1) { Figura.Desplazamiento_abajo}
+	// Si direccio es true la figura se desplazara hacia arriba, en cambio si es false irá hacia abajo.
+	// En la clase Tauler creo que para que no choque con otra figura hay que implementar un if ( fila - 1 != 1) { Figura.Desplazamiento_abajo}
 
-	for (int i = 0; i < altura; i++)
+	if (direccio)
 	{
-		for (int k = 0; k < anchura; k++) {
-
-			if (estructura[i][k] = 1) {
-				pos_columna--;
-			}
-		}
+		pos_fila++;
+	}
+	else {
+		pos_fila--;
 	}
 
 }
 
-
-void Figura::Girar(bool sentido) {
+void Figura::girar(bool sentido) {
 
 	// Si sentido es true, sera un giro en sentido horario, si es false será en sentido antihorario
 
-	int matriz_transpuesta[MAX_ANCHURA][MAX_ALTURA];
+	int matriz_transpuesta[MAX_ALTURA][MAX_ANCHURA];
 
-	for (int i = 0; i < anchura; ++i) {
-		for (int j = 0; j < altura; ++j) {
-			matriz_transpuesta[j][i] = estructura[i][j];
+	for (int i = 0; i < m_altura; ++i) {
+		for (int j = 0; j < m_anchura; ++j) {
+			matriz_transpuesta[j][i] = m_estructura[i][j];
 
 		}
 	}
 
-	for (int i = 0; i < altura; ++i) {
-		for (int j = 0; j < anchura; ++j) {
-			estructura[i][j] = matriz_transpuesta[i][j];
+	for (int i = 0; i < m_altura; ++i) {
+		for (int j = 0; j < m_anchura; ++j) {
+			m_estructura[i][j] = matriz_transpuesta[i][j];
 		}
 	}
 
 	if (sentido)
 	{
-		for (int i = 0; i < anchura; ++i) {
-			for (int j = 0; j < altura / 2; ++j) {
-				int temp = estructura[i][j];
-				estructura[i][j] = estructura[i][anchura - 1 - j];
-				estructura[i][anchura - 1 - j] = temp;
+		for (int i = 0; i < m_anchura / 2; ++i) {
+			for (int j = 0; j < altura; ++j) {
+				int temp = m_estructura[j][i];
+				estructura[j][i] = m_estructura[j][m_anchura - 1 - i];
+				estructura[j][m_anchura - 1 - i] = temp;
 			}
 		}
 
 	}
 	else {
 
-		for (int i = 0; i < altura; ++i) {
-			for (int j = 0; j < anchura / 2; ++j) {
-				int temp = estructura[i][j];
-				estructura[i][j] = estructura[i][altura - 1 - j];
-				estructura[i][altura - 1 - j] = temp;
+		for (int i = 0; i < m_altura / 2; ++i) {
+			for (int j = 0; j < m_anchura; ++j) {
+				int temp = m_estructura[i][j];
+				estructura[i][j] = m_estructura[m_altura - 1 - i][j];
+				estructura[m_altura - 1 - i][j] = temp;
 			}
 		}
 	}
+
 }
 
+int Figura::getEstructura(int estructura[MAX_ALTURA][MAX_ANCHURA])const
+{
+	for (int i = 0; i < m_altura; i++)
+		for (int j = 0; j < m_anchura; j++)
+			estructura[i][j] = m_estructura[i][j];
+}
