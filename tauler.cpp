@@ -41,9 +41,9 @@ bool Tauler::colisionaFigura(const Figura& figura)
 
     int filaEstructura = 0;
     int filaTauler = figura.getFila() - 1;
-    
+
     figura.getEstructura(estructura);
-    while(!colisionaFigura && (filaEstructura <= figura.getAltura()));
+    while (!colisionaFigura && (filaEstructura <= figura.getAltura()));
     {
         int colEstructura = 0;
         int colTauler = figura.getColumna() + 1;
@@ -55,11 +55,11 @@ bool Tauler::colisionaFigura(const Figura& figura)
             }
             colEstructura++;
             colTauler++;
-        } 
+        }
 
         filaEstructura++;
         filaTauler++;
-    } 
+    }
     return colisionaFigura;
 
 }
@@ -74,11 +74,11 @@ int Tauler::colocaFigura(const Figura& figura)
     int filaTauler = figura.getFila() - 1;
     int filaEstructura = 0;
 
-    while(filaEstructura < figura.getAltura())
+    while (filaEstructura < figura.getAltura())
     {
-        int colTauler = figura.getColumna + 1;
+        int colTauler = figura.getColumna() + 1;
         int colEstructura = 0;
-        while(colEstructura < figura.getEstructura)
+        while (colEstructura < figura.getAnchura())
         {
             if (estructura[filaEstructura][colEstructura] != 0)
             {
@@ -110,18 +110,18 @@ void Tauler::baixa(int fila)
             m_lliures[i] = m_lliures[i - 1];
         }
     }
-    for (int i = 0; i < MAX_COLUMNES; i++) 
+    for (int i = 0; i < MAX_COLUMNES; i++)
     {
         m_tauler[0][i + 1] = COLOR_NEGRE;
     }
-    m_lliures[0] = MAX_COLUMNES; 
+    m_lliures[0] = MAX_COLUMNES;
 }
 
 void Tauler::getTauler(ColorFigura tauler[MAX_FILES][MAX_COLUMNES])
 {
-    for (int i = 0; i < MAX_FILES; i++) 
+    for (int i = 0; i < MAX_FILES; i++)
     {
-        for (int j = 0; j < MAX_COLUMNES; j++) 
+        for (int j = 0; j < MAX_COLUMNES; j++)
             tauler[i][j] = m_tauler[i][j + 1];
     }
 }

@@ -7,16 +7,16 @@ void Joc::inicialitza(const string& nomFitxer)
 {
 	ifstream fitxer;
 	fitxer.open(nomFitxer);
-	if(fitxer.is_open())
+	if (fitxer.is_open())
 	{
-		Tablero.Tauler();
+		m_tauler = Tauler();
 
 		int tipus, fila, columna, gir;
 		fitxer >> tipus >> fila >> columna >> gir;
 
 		while (!fitxer.eof())
 		{
-			m_figura.iniciarFigura(tipus);
+			m_figura.iniciarFigura(TipusFigura(tipus));
 
 			for (int i = 0; i < gir; i++)
 			{
@@ -24,8 +24,8 @@ void Joc::inicialitza(const string& nomFitxer)
 			}
 
 			m_figura.set_fila_columna(fila, columna);
-			
-			Tablero.colocaFigura(m_figura);
+
+			m_tauler.colocaFigura(Figura_actual);
 
 			fitxer >> tipus >> fila >> columna >> gir;
 
@@ -34,29 +34,48 @@ void Joc::inicialitza(const string& nomFitxer)
 		fitxer.close();
 	}
 }
+
 bool Joc::giraFigura(DireccioGir direccio)
 {
-	m_figura.gira(direccio);
+	bool direccion; 
+
+	if (direccio==GIR_HORARI) {
+		direccion = true;
+	}
+	else {
+		direccion = false;
+	}
+
+	m_figura.girar(direccion);
 	bool colisiona = m_tauler.colisionaFigura(m_figura);
 	if (colisiona)
 	{
 		if (direccio == GIR_HORARI)
-			direccio = GIR_ANTI_HORARI;
+			direccion = false;
 		else
-			direccio = GIR_HORARI;
-		m_figura.gira(direccio);
+			direccion = true;
+		m_figura.gira(direccion);
 	}
 	return !colisiona;
 }
 
 bool Joc::mouFigura(int direccio)
 {
-	m_figura.mouFigura(direccio);
-	bool colisiona = m_tauler.colisionaFigura(m_figuraActual);
+	bool direccion;
+
+	if (direccio == 1) {
+		direccion = true;
+	}
+	else if(direcio=-1){
+		direccion = false;
+	}
+
+	m_figura.desplazamientoLateral(direccion);
+	bool colisiona = m_tauler.colisionaFigura(m_figura);
 	if (colisiona)
 	{
-		dirContrari = -direccio;
-		m_figuraActual.mou(dirContrari);
+		dirContrari = !direccion; 
+		m_figura.desplazamientoLateral(dirContrari);
 	}
 	return !colisiona;
 }
@@ -64,11 +83,11 @@ bool Joc::mouFigura(int direccio)
 int Joc::baixaFigura()
 {
 	int nFiles;
-	m_figura.baixa();
+	m_figura.desplazamientoVertical(false);
 
 	if (m_tauler.colisionaFigura(m_figura))
 	{
-		nFiles = m_tauler.colocaFigura(m_figuraActual);
+		nFiles = m_tauler.colocaFigura(m_figura);
 	}
 	return nFiles;
 }

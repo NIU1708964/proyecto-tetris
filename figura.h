@@ -38,27 +38,28 @@ public:
 	void figuraVacia();
 	void llenarFigura(int parametro, int anch, int alt);
 	void iniciarFigura(TipusFigura tipo_figura);
-	void set_fila_columna(int fila, int columna) { m_pos_fila = fila; m_pos_columna = columna;}
+	void set_fila_columna(int fila, int columna) { m_pos_fila = fila; m_pos_columna = columna; }
 	void desplazamientoLateral(bool direccio);
 	void desplazamientoVertical(bool direccio);
 	void girar(bool sentido);
 
-	int getFila() { return m_pos_fila; } const;
-	int getColumna() { return m_pos_columna; } const;
+	int getFila() const { return m_pos_fila; }
+	int getColumna() const { return m_pos_columna; }
 
-	int getEstructura(int estructura[MAX_ALTURA][MAX_ANCHURA])const;
 	int getAltura() const { return m_altura; }
-	int getAnchura() { return m_anchura; } const;
-	ColorFigura getColor() const { return m_colorFigura; }
+	int getAnchura() const { return m_anchura; }
+	ColorFigura getColor() const { return colorFigura; }
+	int getEstructura(int m_estructura[MAX_ALTURA][MAX_ANCHURA]) const;
 
 
 private:
 
-	TipusFigura m_tipoFigura;
-	ColorFigura m_colorFigura;
+	TipusFigura tipoFigura;
+	ColorFigura colorFigura;
 	int m_pos_fila;
 	int m_pos_columna; // Comienza en el max de altura del tablero
 	int m_anchura;
 	int m_altura;
-	int m_estructura[MAX_ALTURA][MAX_ANCHURA]; 
-}
+	int estructura[MAX_ALTURA][MAX_ANCHURA];
+
+};

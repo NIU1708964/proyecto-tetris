@@ -3,9 +3,9 @@
 
 void Figura::figuraVacia() {
 
-	for (int i = 0; i < altura; i++)
+	for (int i = 0; i < m_altura; i++)
 	{
-		for (int k = 0; k < anchura; k++) {
+		for (int k = 0; k < m_anchura; k++) {
 
 			estructura[i][k] = 0;
 		}
@@ -28,6 +28,7 @@ void Figura::llenarFigura(int parametro, int anch, int alt) {
 
 void Figura::iniciarFigura(TipusFigura tipoFigura) {
 
+	int i;
 
 	switch (tipoFigura)
 	{
@@ -37,7 +38,7 @@ void Figura::iniciarFigura(TipusFigura tipoFigura) {
 		m_anchura = 2;
 
 		figuraVacia();
-		llenarFigura(1, altura, anchura);
+		llenarFigura(1, m_altura, m_anchura);
 
 		colorFigura = COLOR_GROC;
 
@@ -51,9 +52,9 @@ void Figura::iniciarFigura(TipusFigura tipoFigura) {
 
 		figuraVacia();
 
-		int i = 1;
+		i = 1;
 
-		for (int k = 0; k < anchura; k++) {
+		for (int k = 0; k < m_anchura; k++) {
 
 			estructura[i][k] = 1;
 		}
@@ -73,7 +74,7 @@ void Figura::iniciarFigura(TipusFigura tipoFigura) {
 
 		i = 1;
 
-		for (int k = 0; k < anchura; k++) {
+		for (int k = 0; k < m_anchura; k++) {
 
 			estructura[i][k] = 1;
 		}
@@ -92,7 +93,7 @@ void Figura::iniciarFigura(TipusFigura tipoFigura) {
 
 		i = 1;
 
-		for (int k = 0; k < anchura; k++) {
+		for (int k = 0; k < m_anchura; k++) {
 
 			estructura[i][k] = 1;
 		}
@@ -112,7 +113,7 @@ void Figura::iniciarFigura(TipusFigura tipoFigura) {
 
 		i = 1;
 
-		for (int k = 0; k < anchura; k++) {
+		for (int k = 0; k < m_anchura; k++) {
 
 			estructura[i][k] = 1;
 		}
@@ -164,10 +165,10 @@ void Figura::desplazamientoLateral(bool direccio) {
 
 	if (direccio)
 	{
-		pos_columna++;
+		m_pos_columna++;
 	}
 	else {
-		pos_columna--;
+		m_pos_columna--;
 	}
 }
 
@@ -178,10 +179,10 @@ void Figura::desplazamientoVertical(bool direccio) {
 
 	if (direccio)
 	{
-		pos_fila++;
+		m_pos_fila++;
 	}
 	else {
-		pos_fila--;
+		m_pos_fila--;
 	}
 
 }
@@ -194,23 +195,23 @@ void Figura::girar(bool sentido) {
 
 	for (int i = 0; i < m_altura; ++i) {
 		for (int j = 0; j < m_anchura; ++j) {
-			matriz_transpuesta[j][i] = m_estructura[i][j];
+			matriz_transpuesta[j][i] = estructura[i][j];
 
 		}
 	}
 
 	for (int i = 0; i < m_altura; ++i) {
 		for (int j = 0; j < m_anchura; ++j) {
-			m_estructura[i][j] = matriz_transpuesta[i][j];
+			estructura[i][j] = matriz_transpuesta[i][j];
 		}
 	}
 
 	if (sentido)
 	{
 		for (int i = 0; i < m_anchura / 2; ++i) {
-			for (int j = 0; j < altura; ++j) {
-				int temp = m_estructura[j][i];
-				estructura[j][i] = m_estructura[j][m_anchura - 1 - i];
+			for (int j = 0; j < m_altura; ++j) {
+				int temp = estructura[j][i];
+				estructura[j][i] = estructura[j][m_anchura - 1 - i];
 				estructura[j][m_anchura - 1 - i] = temp;
 			}
 		}
@@ -220,8 +221,8 @@ void Figura::girar(bool sentido) {
 
 		for (int i = 0; i < m_altura / 2; ++i) {
 			for (int j = 0; j < m_anchura; ++j) {
-				int temp = m_estructura[i][j];
-				estructura[i][j] = m_estructura[m_altura - 1 - i][j];
+				int temp = estructura[i][j];
+				estructura[i][j] = estructura[m_altura - 1 - i][j];
 				estructura[m_altura - 1 - i][j] = temp;
 			}
 		}
@@ -229,9 +230,9 @@ void Figura::girar(bool sentido) {
 
 }
 
-int Figura::getEstructura(int estructura[MAX_ALTURA][MAX_ANCHURA])const
+int Figura::getEstructura(int m_estructura[MAX_ALTURA][MAX_ANCHURA]) const
 {
 	for (int i = 0; i < m_altura; i++)
 		for (int j = 0; j < m_anchura; j++)
-			estructura[i][j] = m_estructura[i][j];
+			m_estructura[i][j] = estructura[i][j];
 }
