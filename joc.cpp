@@ -25,7 +25,7 @@ void Joc::inicialitza(const string& nomFitxer)
 
 			m_figura.set_fila_columna(fila, columna);
 
-			m_tauler.colocaFigura(Figura_actual);
+			m_tauler.colocaFigura(m_figura);
 
 			fitxer >> tipus >> fila >> columna >> gir;
 
@@ -54,7 +54,7 @@ bool Joc::giraFigura(DireccioGir direccio)
 			direccion = false;
 		else
 			direccion = true;
-		m_figura.gira(direccion);
+		m_figura.girar(direccion);
 	}
 	return !colisiona;
 }
@@ -66,7 +66,7 @@ bool Joc::mouFigura(int direccio)
 	if (direccio == 1) {
 		direccion = true;
 	}
-	else if(direcio=-1){
+	else if(direccio == -1){ 
 		direccion = false;
 	}
 
@@ -74,7 +74,7 @@ bool Joc::mouFigura(int direccio)
 	bool colisiona = m_tauler.colisionaFigura(m_figura);
 	if (colisiona)
 	{
-		dirContrari = !direccion; 
+		bool dirContrari = !direccion; 
 		m_figura.desplazamientoLateral(dirContrari);
 	}
 	return !colisiona;
