@@ -48,32 +48,48 @@ bool Joc::giraFigura(DireccioGir direccio)
 	}
 	return !colisiona;
 }
-bool mouFigura(int dirX)
+
+bool Joc::mouFigura(int direccio)
 {
-	m_figura.mou(dirX);
-	if(figura.colisiona)
-	//implementar metode colisiona tauler per evitar un moviment si colisiona
-	//implementar una funcio dins de la clase figura que permeti moure la figura
+	m_figura.mouFigura(direccio);
+	bool colisiona = m_tauler.colisionaFigura(m_figuraActual);
+	if (colisiona)
+	{
+		dirContrari = -direccio;
+		m_figuraActual.mou(dirContrari);
+	}
+	return !colisiona;
 }
-int baixaFigura()
+
+int Joc::baixaFigura()
 {
-	if()
-	//si la figura omple una fila, eliminar-la
+	int nFiles;
+	m_figura.baixa();
+
+	if (m_tauler.colisionaFigura(m_figura))
+	{
+		nFiles = m_tauler.colocaFigura(m_figuraActual);
+	}
+	return nFiles;
 }
-void escriuTauler(const string& nomFitxer)
+
+void Joc::escriuTauler(const string& nomFitxer)
 {
 	ofstream fitxer;
 	fitxer.open(nomFitxer);
 	if (fitxer.is_open())
 	{
+		ColorFigura tauler[MAX_FILA][MAX_COL];
+		m_tauler.getTauler(tauler);
 		for (int i = 0; i < MAX_FILA; i++)
 		{
 			for (int j = 0; j < MAX_COL; j++)
 			{
-				fitxer << tauler[i][j] << " ";
+				fitxer << int(tauler[i][j]) << " ";
 			}
 			fitxer << endl;
 		}
+
 		fitxer.close();
 	}
-}
+}//incompleto
