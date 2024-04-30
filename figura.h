@@ -37,14 +37,18 @@ public:
 
 	void figuraVacia();
 	void llenarFigura(int parametro, int anch, int alt);
-	
 	void iniciarFigura(TipusFigura tipo_figura);
+	void set_fila_columna(int fila, int columna) { m_pos_fila = fila; m_pos_columna = columna;}
 	void desplazamientoLateral(bool direccio);
 	void desplazamientoVertical(bool direccio);
 	void girar(bool sentido);
 
+	int getFila() { return m_pos_fila; } const;
+	int getColumna() { return m_pos_columna; } const;
+
 	int getEstructura(int estructura[MAX_ALTURA][MAX_ANCHURA])const;
 	int getAltura() const { return m_altura; }
+	int getAnchura() { return m_anchura; } const;
 	ColorFigura getColor() const { return m_colorFigura; }
 
 

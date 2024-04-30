@@ -10,6 +10,7 @@ using namespace std;
 class Tauler()
 {
 public:
+
 	Tauler();
 	void inicialitza(ColorFigura tauler[MAX_FILES][MAX_COLUMNES]);
 	bool colisionaFigura(const Figura & figura);
@@ -20,6 +21,6 @@ public:
 private:
 
 	ColorFigura m_tauler[N_FILES + 1][N_COLUMNES + 2];// +1 a fila y +2 a columna para los bordes
-	int m_lliures[MAX_FILES]
+	int m_lliures[MAX_FILES];
 };
 #endif

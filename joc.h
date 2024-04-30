@@ -1,7 +1,7 @@
 #ifndef JOC_H
 #define JOC_H
-#include "Tauler.h"
-#include "Figura.h"
+#include "tauler.h"
+#include "figura.h"
 #include <string>
 using namespace std;
 
@@ -16,6 +16,11 @@ public:
 	void escriuTauler(const string& nomFitxer);
 
 private:
+
+	Figura Figura_actual;
+	Tauler Tablero;
+
+
 };
 
 #endif

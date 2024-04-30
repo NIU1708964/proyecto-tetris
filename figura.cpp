@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Figura.h"
+#include "figura.h"
 
 void Figura::figuraVacia() {
 

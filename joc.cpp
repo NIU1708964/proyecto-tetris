@@ -1,5 +1,6 @@
 #include "joc.h"
 #include "figura.h"
+#include "tauler.h"
 #include <fstream>
 
 void Joc::inicialitza(const string& nomFitxer)
@@ -8,8 +9,27 @@ void Joc::inicialitza(const string& nomFitxer)
 	fitxer.open(nomFitxer);
 	if(fitxer.is_open())
 	{
-		int tipus, fila, columna, gir;
+		Tablero.Tauler();
 
+		int tipus, fila, columna, gir;
+		fitxer >> tipus >> fila >> columna >> gir;
+
+		while (!fitxer.eof())
+		{
+			Figura_actual.iniciarFigura(tipus);
+
+			for (int i = 0; i < gir; i++)
+			{
+				Figura_actual.girar(true);
+			}
+
+			Figura_actual.set_fila_columna(fila, columna);
+			
+			Tablero.colocaFigura(Figura_actual);
+
+			fitxer >> tipus >> fila >> columna >> gir;
+
+		}
 
 		fitxer.close();
 	}
