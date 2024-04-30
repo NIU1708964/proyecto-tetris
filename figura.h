@@ -56,5 +56,5 @@ private:
 	int m_pos_columna; // Comienza en el max de altura del tablero
 	int m_anchura;
 	int m_altura;
-	int m_estructura[MAX_ALTURA][MAX_ANCHURA];
+	int m_estructura[MAX_ALTURA][MAX_ANCHURA]; 
 }
