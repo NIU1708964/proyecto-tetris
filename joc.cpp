@@ -16,16 +16,16 @@ void Joc::inicialitza(const string& nomFitxer)
 
 		while (!fitxer.eof())
 		{
-			Figura_actual.iniciarFigura(tipus);
+			m_figura.iniciarFigura(tipus);
 
 			for (int i = 0; i < gir; i++)
 			{
-				Figura_actual.girar(true);
+				m_figura.girar(true);
 			}
 
-			Figura_actual.set_fila_columna(fila, columna);
+			m_figura.set_fila_columna(fila, columna);
 			
-			Tablero.colocaFigura(Figura_actual);
+			Tablero.colocaFigura(m_figura);
 
 			fitxer >> tipus >> fila >> columna >> gir;
 
@@ -34,10 +34,19 @@ void Joc::inicialitza(const string& nomFitxer)
 		fitxer.close();
 	}
 }
-bool giraFigura(DireccioGir direccio)
+bool Joc::giraFigura(DireccioGir direccio)
 {
-	//implementar una funcio dins de la clase figura que permeti girar la figura y comprobar
-	//si colisiona contra altres elements
+	m_figura.gira(direccio);
+	bool colisiona = m_tauler.colisionaFigura(m_figura);
+	if (colisiona)
+	{
+		if (direccio == GIR_HORARI)
+			direccio = GIR_ANTI_HORARI;
+		else
+			direccio = GIR_HORARI;
+		m_figura.gira(direccio);
+	}
+	return !colisiona;
 }
 bool mouFigura(int dirX)
 {

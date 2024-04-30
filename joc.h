@@ -5,6 +5,12 @@
 #include <string>
 using namespace std;
 
+typedef enum
+{
+	GIR_HORARI = 0,
+	GIR_ANTI_HORARI
+} DireccioGir;
+
 class Joc
 {
 public:
@@ -17,8 +23,8 @@ public:
 
 private:
 
-	Figura Figura_actual;
-	Tauler Tablero;
+	Figura m_figura;
+	Tauler m_tauler;
 
 
 };
