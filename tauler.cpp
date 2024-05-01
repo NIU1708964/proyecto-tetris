@@ -130,11 +130,11 @@ void Tauler::baixa(int fila)
 {
     if (fila > 0)
     {
-        for (int i = fila; i > 0; i++)
+        for (int i = fila; i > 0; i--)
         {
-            for (int j = 0; j > 0; j++)
+            for (int j = 0; j < MAX_COLUMNES; j++)
             {
-                m_tauler[i][j + 1] = m_tauler[i - 1][j + 1];
+                m_tauler[i][j + 1] = m_tauler[i - 1][j + 1]; 
             }
             m_lliures[i] = m_lliures[i - 1];
         }
