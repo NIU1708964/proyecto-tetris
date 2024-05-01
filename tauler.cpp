@@ -5,7 +5,8 @@
 using namespace std;
 
 
-Tauler::Tauler() {
+Tauler::Tauler() 
+{
 
     for (int i = 0; i < MAX_FILES; i++)
     {
@@ -24,15 +25,17 @@ Tauler::Tauler() {
 
 }
 
-void Tauler::inicialitza(ColorFigura tauler[MAX_FILES][MAX_COLUMNES]) {
-
+void Tauler::inicialitza(ColorFigura tauler[MAX_FILES][MAX_COLUMNES]) 
+{
     for (int i = 0; i < MAX_FILES; i++)
+    {
         for (int j = 0; j < MAX_COLUMNES; j++)
         {
             m_tauler[i][j + 1] = tauler[i][j];
             if (tauler[i][j] != COLOR_NEGRE)
                 m_lliures[i]--;
         }
+    }       
 }
 
 bool Tauler::colisionaFigura(const Figura& figura)
@@ -50,7 +53,7 @@ bool Tauler::colisionaFigura(const Figura& figura)
         int colTauler = figura.getColumna() + 1;
         while (!colisionaFigura && (colEstructura <= figura.getAnchura()))
         {
-            if ((estructura[filaEstructura][colEstructura] * m_tauler[filaTauler][colTauler]) != 0) //si l'espai en el tauler esta lliure hi haura un 0
+            if ((estructura[filaEstructura][colEstructura] * m_tauler[filaTauler][colTauler]) != 0)
             {
                 colisionaFigura = true;
             }
@@ -91,8 +94,10 @@ int Tauler::colocaFigura(const Figura& figura)
                     baixa(filaTauler);
                 }
             }
+            colTauler++;
             colEstructura++;
         }
+        filaTauler++;
         filaEstructura++;
     }
     return numFilesComp;
@@ -127,7 +132,7 @@ void Tauler::getTauler(ColorFigura tauler[MAX_FILES][MAX_COLUMNES])
     }
 }
 
-void::Tauler::LimpiarTauler(const Figura& figura) {
+void::Tauler::limpiarTauler(const Figura& figura) {
 
     for (int i = 0; i < figura.getAltura(); i++) {
         for (int j = 0; j < figura.getAnchura(); j++)
@@ -136,12 +141,11 @@ void::Tauler::LimpiarTauler(const Figura& figura) {
 
                 m_tauler[figura.getFila() + i - 1][figura.getColumna() + j - 1] = COLOR_NEGRE;
             }
-
         }
     }
 }
 
-void::Tauler::ImplementacioFigura(const Figura& figura) {
+void::Tauler::implementacioFigura(const Figura& figura) {
 
     ColorFigura Taula[MAX_FILES][MAX_COLUMNES];
 
@@ -159,11 +163,4 @@ void::Tauler::ImplementacioFigura(const Figura& figura) {
     }
 
     inicialitza(Taula);
-
-
 }
-
-
-
-
-
