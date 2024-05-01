@@ -1,5 +1,5 @@
 #include <iostream>
-#include "figura.h"
+#include "Figura.h"
 
 void Figura::figuraVacia() {
 
@@ -26,11 +26,13 @@ void Figura::llenarFigura(int parametro, int anch, int alt) {
 }
 
 
-void Figura::iniciarFigura(TipusFigura tipoFigura) {
+void Figura::iniciarFigura(TipusFigura tipo_figura) {
 
 	int i;
+	tipoFigura = tipo_figura;
 
-	switch (tipoFigura)
+
+	switch (tipo_figura)
 	{
 	case FIGURA_O:
 
@@ -179,10 +181,10 @@ void Figura::desplazamientoVertical(bool direccio) {
 
 	if (direccio)
 	{
-		m_pos_fila++;
+		m_pos_fila--;
 	}
 	else {
-		m_pos_fila--;
+		m_pos_fila++;
 	}
 
 }
@@ -230,9 +232,10 @@ void Figura::girar(bool sentido) {
 
 }
 
-int Figura::getEstructura(int m_estructura[MAX_ALTURA][MAX_ANCHURA]) const
+void Figura::getEstructura(int m_estructura[MAX_ALTURA][MAX_ANCHURA]) const
 {
 	for (int i = 0; i < m_altura; i++)
 		for (int j = 0; j < m_anchura; j++)
 			m_estructura[i][j] = estructura[i][j];
 }
+

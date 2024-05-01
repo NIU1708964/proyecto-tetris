@@ -1,9 +1,9 @@
 #ifndef TAULER_H
 #define TAULER_H
-#include "figura.h"
+#include "Figura.h"
 
-#define MAX_COLUMNES = 8
-#define MAX_FILES = 8
+#define MAX_COLUMNES 8
+#define MAX_FILES 8
 
 using namespace std;
 
@@ -17,7 +17,8 @@ public:
 	int colocaFigura(const Figura& figura);
 	void baixa(int fila);
 	void getTauler(ColorFigura tauler[MAX_FILES][MAX_COLUMNES]);
-	void dibuixaFigura(const Figura& figura);
+	void LimpiarTauler(const Figura& figura);
+	void ImplementacioFigura(const Figura& figura);
 
 private:
 
