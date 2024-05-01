@@ -4,8 +4,8 @@
 using namespace std;
 
 
-Tauler::Tauler() {
-
+Tauler::Tauler() 
+{
     for (int i = 0; i < MAX_FILES; i++)
     {
         m_tauler[i][0] = NO_COLOR;
@@ -19,18 +19,18 @@ Tauler::Tauler() {
     }
     for (int i = 0; i < MAX_FILES; i++)
         m_lliures[i] = MAX_COLUMNES;
-
-
 }
 
-void Tauler::inicialitza(ColorFigura tauler[MAX_FILES][MAX_COLUMNES]) {
-
+void Tauler::inicialitza(ColorFigura tauler[MAX_FILES][MAX_COLUMNES]) 
+{
     for (int i = 0; i < MAX_FILES; i++)
         for (int j = 0; j < MAX_COLUMNES; j++)
         {
             m_tauler[i][j + 1] = tauler[i][j];
             if (tauler[i][j] != COLOR_NEGRE)
+            {
                 m_lliures[i]--;
+            }
         }
 }
 
@@ -90,11 +90,40 @@ int Tauler::colocaFigura(const Figura& figura)
                     baixa(filaTauler);
                 }
             }
+            colTauler++;
             colEstructura++;
         }
+        filaTauler++;
         filaEstructura++;
     }
     return numFilesComp;
+}
+
+void Tauler::dibuixaFigura(const Figura& figura)
+{
+    int estructura[MAX_ALTURA][MAX_ANCHURA];
+
+    ColorFigura color = figura.getColor();
+    figura.getEstructura(estructura);
+    int filaTauler = figura.getFila() - 1;
+    int filaEstructura = 0;
+
+    while (filaEstructura < figura.getAltura())
+    {
+        int colTauler = figura.getColumna() + 1;
+        int colEstructura = 0;
+        while (colEstructura < figura.getAnchura())
+        {
+            if (estructura[filaEstructura][colEstructura] != 0)
+            {
+                m_tauler[filaTauler][colTauler] = color;
+            }
+            colTauler++;
+            colEstructura++;
+        }
+        filaTauler++;
+        filaEstructura++;
+    }
 }
 
 void Tauler::baixa(int fila)
