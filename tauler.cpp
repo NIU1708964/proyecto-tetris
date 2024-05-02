@@ -79,19 +79,18 @@ int Tauler::colocaFigura(const Figura& figura)
 
     ColorFigura color = figura.getColor();
     figura.getEstructura(estructura);
-    int filaTauler = figura.getFila() - 1;
     int filaEstructura = 0;
 
-    while (filaEstructura < figura.getAltura())
+    int filaTauler = figura.getFila(); //se ha quitado el -1
+    for (int filaEstructura = 0; filaEstructura < figura.getAltura; filaEstructura++) //se ha cambiado las estructuras while a for
     {
         int colTauler = figura.getColumna() + 1;
-        int colEstructura = 0;
-        while (colEstructura < figura.getAnchura())
+        for (int colEstructura = 0; colEstructura < figura.getAnchura; colEstructura++)
         {
             if (estructura[filaEstructura][colEstructura] != 0)
             {
                 m_tauler[filaTauler][colTauler] = color;
-                m_lliures[filaTauler]--;
+                m_lliures[filaTauler] == 0;
                 if (m_lliures[filaTauler] == 0)
                 {
                     numFilesComp++;
@@ -99,10 +98,8 @@ int Tauler::colocaFigura(const Figura& figura)
                 }
             }
             colTauler++;
-            colEstructura++;
         }
         filaTauler++;
-        filaEstructura++;
     }
     return numFilesComp;
 }
@@ -111,20 +108,20 @@ void Tauler::baixa(int fila)
 {
     if (fila > 0)
     {
-        for (int i = fila; i > 0; i++)
+        for (int i = fila; i > 0; i--)//i++ a i--
         {
-            for (int j = 0; j > 0; j++)
+            for (int j = 0; j > MAX_COLUMNES; j++)//se cambia el j>0 a j>maxcol
             {
                 m_tauler[i][j + 1] = m_tauler[i - 1][j + 1];
             }
             m_lliures[i] = m_lliures[i - 1];
         }
-    }
-    for (int i = 0; i < MAX_COLUMNES; i++)
-    {
-        m_tauler[0][i + 1] = COLOR_NEGRE;
-    }
-    m_lliures[0] = MAX_COLUMNES;
+        for (int i = 0; i < MAX_COLUMNES; i++)
+        {
+            m_tauler[0][i + 1] = COLOR_NEGRE;
+        }
+        m_lliures[0] = MAX_COLUMNES;
+    }  //se coloca todo dentro del if
 }
 
 void Tauler::getTauler(ColorFigura tauler[MAX_FILES][MAX_COLUMNES])
