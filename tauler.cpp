@@ -1,28 +1,29 @@
 #include "Tauler.h"
-
 #include <iostream>
 
 using namespace std;
 
-
-Tauler::Tauler() 
+Tauler::Tauler()
 {
 
-    for (int i = 0; i < MAX_FILES; i++)
+    for (int i = 0; i < MAX_FILES + 1; i++) //añado + 1
     {
         m_tauler[i][0] = NO_COLOR;
-        m_tauler[i][MAX_COLUMNES + 2] = NO_COLOR;
+        m_tauler[i][MAX_COLUMNES + 1] = NO_COLOR; //cambio + 2 a + 1
         for (int j = 0; j < MAX_COLUMNES; j++)
-            m_tauler[i][j + 2] = COLOR_NEGRE;
-    }
+        {
+            m_tauler[i][j + 1] = COLOR_NEGRE; //añado + 1
+        }
+    } //for revisado
+    
     for (int j = 0; j < MAX_COLUMNES + 2; j++)
     {
-        m_tauler[MAX_FILES][j] = NO_COLOR;
+        m_tauler[MAX_FILES][j] = NO_COLOR; //en la fila 8 (index 9) habra un borde
     }
     for (int i = 0; i < MAX_FILES; i++)
+    {
         m_lliures[i] = MAX_COLUMNES;
-
-
+    } //for2 revisado
 }
 
 void Tauler::inicialitza(ColorFigura tauler[MAX_FILES][MAX_COLUMNES]) 
@@ -31,42 +32,45 @@ void Tauler::inicialitza(ColorFigura tauler[MAX_FILES][MAX_COLUMNES])
     {
         for (int j = 0; j < MAX_COLUMNES; j++)
         {
-            m_tauler[i][j + 1] = tauler[i][j];
+            m_tauler[i][j + 1] = tauler[i][j]; //revisado
             if (tauler[i][j] != COLOR_NEGRE)
+            {
                 m_lliures[i]--;
+            }
         }
     }       
-}
+} //revisado
 
 bool Tauler::colisionaFigura(const Figura& figura)
 {
-    bool colisionaFigura = false;
-    int estructura[MAX_ALTURA][MAX_ANCHURA];
+    bool colisionaFigura = false; //elimino int estructura[][]
+
+    int filaTauler = figura.getFila();
+    figura.getEstructura(estructura);
 
     int filaEstructura = 0;
-    int filaTauler = figura.getFila() - 1;
 
-    figura.getEstructura(estructura);
-    while (!colisionaFigura && (filaEstructura <= figura.getAltura()))
+    do
     {
+        int colTauler = figura.getColumna();
         int colEstructura = 0;
-        int colTauler = figura.getColumna() + 1;
-        while (!colisionaFigura && (colEstructura <= figura.getAnchura()))
+
+        do
         {
-            if ((estructura[filaEstructura][colEstructura] * m_tauler[filaTauler][colTauler]) != 0)
+            if (m_tauler[filaTauler][colTauler] != 0) //si en el tablero no hay cero colisiona
             {
                 colisionaFigura = true;
             }
             colEstructura++;
             colTauler++;
-        }
+        } while (!colisionaFigura && colEstructura < figura.getAnchura()); //getAmplada
 
         filaEstructura++;
         filaTauler++;
-    }
-    return colisionaFigura;
+    } while (!colisionaFigura && filaEstructura < figura.getAltura());
 
-}
+    return colisionaFigura;
+} //revisado ?
 
 int Tauler::colocaFigura(const Figura& figura)
 {

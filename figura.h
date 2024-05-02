@@ -1,6 +1,6 @@
 #pragma once
 #define MAX_ALTURA 10
-#define MAX_ANCHURA 10
+#define MAX_AMPLADA 10
 
 #include <iostream>
 

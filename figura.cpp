@@ -232,7 +232,7 @@ void Figura::girar(bool sentido) {
 
 }
 
-void Figura::getEstructura(int m_estructura[MAX_ALTURA][MAX_ANCHURA]) const
+void Figura::getEstructura(int m_estructura[MAX_ALTURA][MAX_AMPLADA]) const
 {
 	for (int i = 0; i < m_altura; i++)
 		for (int j = 0; j < m_anchura; j++)
