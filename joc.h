@@ -1,14 +1,10 @@
 #ifndef JOC_H
 #define JOC_H
-#include "tauler.h"
+#include "Tauler.h"
+#include "Figura.h"
 #include <string>
 using namespace std;
 
-typedef enum
-{
-	GIR_HORARI = 0,
-	GIR_ANTI_HORARI
-} DireccioGir;
 
 class Joc
 {
@@ -21,10 +17,8 @@ public:
 	void escriuTauler(const string& nomFitxer);
 
 private:
-
-	Figura m_figura;
 	Tauler m_tauler;
-
-
+	Figura m_figuraActual;
 };
+
 #endif

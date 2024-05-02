@@ -1,8 +1,7 @@
 #pragma once
-#define MAX_ALTURA 10
-#define MAX_AMPLADA 10
-
-#include <iostream>
+#define MAX_ALTURA 4
+#define MAX_AMPLADA 4
+#define MAX_ANCHURA 4
 
 typedef enum
 {
@@ -31,6 +30,14 @@ typedef enum
 } ColorFigura;
 
 
+
+typedef enum
+{
+	GIR_HORARI = 0,
+	GIR_ANTI_HORARI
+} DireccioGir;
+
+
 class Figura {
 
 public:
@@ -49,7 +56,7 @@ public:
 	int getAltura() const { return m_altura; }
 	int getAnchura() const { return m_anchura; }
 	ColorFigura getColor() const { return colorFigura; }
-	void getEstructura(int m_estructura[MAX_ALTURA][MAX_AMPLADA]) const;
+	void getEstructura(int m_estructura[MAX_ALTURA][MAX_ANCHURA]) const;
 	int obtenerEstructura(int fila, int columna) const { return estructura[fila][columna]; }
 
 
@@ -61,6 +68,6 @@ private:
 	int m_pos_columna; // Comienza en el max de altura del tablero
 	int m_anchura;
 	int m_altura;
-	int estructura[MAX_ALTURA][MAX_AMPLADA];
+	int estructura[MAX_ALTURA][MAX_ANCHURA];
 
 };

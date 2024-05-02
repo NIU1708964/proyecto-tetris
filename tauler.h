@@ -1,27 +1,25 @@
 #ifndef TAULER_H
 #define TAULER_H
-#include "figura.h"
+#include "Figura.h"
 
-#define MAX_FILES 8
-#define MAX_COLUMNES 8
 
-using namespace std;
+const int MAX_FILA = 8;
+const int MAX_COL = 8;
 
 class Tauler
 {
 public:
-
-	Tauler();
-	void inicialitza(ColorFigura tauler[MAX_FILES][MAX_COLUMNES]);
-	bool colisionaFigura(const Figura& figura);
-	int colocaFigura(const Figura& figura);
-	void baixa(int fila);
-	void getTauler(ColorFigura tauler[MAX_FILES][MAX_COLUMNES]);
-	void dibuixaTauler();
+    Tauler();
+    void inicialitza(ColorFigura taulerInicial[MAX_FILA][MAX_COL]);
+    bool colisionaFigura(const Figura& figura);
+    int colocaFigura(const Figura& figura);
+    void dibuixaFigura(const Figura& figura);
+    void getValorsTauler(ColorFigura tauler[MAX_FILA][MAX_COL]);
 
 private:
+    ColorFigura m_tauler[MAX_FILA + 2][MAX_COL + 4];
+    int m_lliures[MAX_FILA];
 
-	ColorFigura m_tauler[MAX_FILES + 1][MAX_COLUMNES + 2];// +1 a fila y +2 a columna para los bordes
-	int m_lliures[MAX_FILES];
+    void baixaFila(int fila);
 };
-#endif
+#endif 

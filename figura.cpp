@@ -1,7 +1,8 @@
+#include "Figura.h"
 #include <iostream>
-#include "figura.h"
 
-void Figura::figuraVacia() {
+void Figura::figuraVacia()
+{
 
 	for (int i = 0; i < m_altura; i++)
 	{
@@ -10,8 +11,8 @@ void Figura::figuraVacia() {
 			estructura[i][k] = 0;
 		}
 	}
-
 }
+
 
 void Figura::llenarFigura(int parametro, int anch, int alt) {
 
@@ -193,7 +194,7 @@ void Figura::girar(bool sentido) {
 
 	// Si sentido es true, sera un giro en sentido horario, si es false será en sentido antihorario
 
-	int matriz_transpuesta[MAX_ALTURA][MAX_AMPLADA];
+	int matriz_transpuesta[MAX_ALTURA][MAX_ANCHURA];
 
 	for (int i = 0; i < m_altura; ++i) {
 		for (int j = 0; j < m_anchura; ++j) {
@@ -232,10 +233,9 @@ void Figura::girar(bool sentido) {
 
 }
 
-void Figura::getEstructura(int m_estructura[MAX_ALTURA][MAX_AMPLADA]) const
+void Figura::getEstructura(int m_estructura[MAX_ALTURA][MAX_ANCHURA]) const
 {
 	for (int i = 0; i < m_altura; i++)
 		for (int j = 0; j < m_anchura; j++)
 			m_estructura[i][j] = estructura[i][j];
 }
-

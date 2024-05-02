@@ -1,5 +1,6 @@
-#include "joc.h"
+#include "Joc.h"
 #include <fstream>
+using namespace std;
 
 void Joc::inicialitza(const string& nomFitxer)
 {
@@ -8,25 +9,24 @@ void Joc::inicialitza(const string& nomFitxer)
 	if (fitxer.is_open())
 	{
 
-		m_tauler = Tauler();
 
 		int tipus, fila, columna, gir;
 		fitxer >> tipus >> fila >> columna >> gir;
 
-		m_figura.set_fila_columna(fila, columna);
-		m_figura.iniciarFigura(TipusFigura(tipus));
+		m_figuraActual.set_fila_columna(fila, columna);
+		m_figuraActual.iniciarFigura(TipusFigura(tipus));
 
 		for (int i = 0; i < gir; i++)
 		{
-			m_figura.girar(true);
+			m_figuraActual.girar(true);
 		}
 
-		ColorFigura taulerInicial[MAX_FILES][MAX_COLUMNES];
+		ColorFigura taulerInicial[MAX_FILA][MAX_COL];
 		int color;
 
 
-		for (int i = 0; i < MAX_FILES; i++)
-			for (int j = 0; j < MAX_COLUMNES; j++)
+		for (int i = 0; i < MAX_FILA; i++)
+			for (int j = 0; j < MAX_COL; j++)
 			{
 				fitxer >> color;
 				taulerInicial[i][j] = ColorFigura(color);
@@ -39,6 +39,7 @@ void Joc::inicialitza(const string& nomFitxer)
 
 bool Joc::giraFigura(DireccioGir direccio)
 {
+
 	bool direccion;
 
 	if (direccio == GIR_HORARI) {
@@ -47,9 +48,9 @@ bool Joc::giraFigura(DireccioGir direccio)
 	else {
 		direccion = false;
 	}
-	m_figura.girar(direccion);
-	
-	bool colisiona = m_tauler.colisionaFigura(m_figura);
+	m_figuraActual.girar(direccion);
+
+	bool colisiona = m_tauler.colisionaFigura(m_figuraActual);
 
 	if (colisiona)
 	{
@@ -58,13 +59,17 @@ bool Joc::giraFigura(DireccioGir direccio)
 		else
 			direccion = true;
 
-		m_figura.girar(direccion);
+		m_figuraActual.girar(direccion);
 	}
 	return !colisiona;
+
 }
 
 bool Joc::mouFigura(int direccio)
 {
+
+
+
 	bool direccion;
 
 	if (direccio == 1) {
@@ -74,29 +79,31 @@ bool Joc::mouFigura(int direccio)
 		direccion = false;
 	}
 
-	m_figura.desplazamientoLateral(direccion);
-	bool colisiona = m_tauler.colisionaFigura(m_figura);
+	m_figuraActual.desplazamientoLateral(direccion);
+	bool colisiona = m_tauler.colisionaFigura(m_figuraActual);
 	if (colisiona)
 	{
 		bool dirContrari = !direccion;
-		m_figura.desplazamientoLateral(dirContrari);
+		m_figuraActual.desplazamientoLateral(dirContrari);
 	}
 	return !colisiona;
+
 }
 
 int Joc::baixaFigura()
 {
+
 	int nFiles = 0;
-	m_figura.desplazamientoVertical(false);
+	m_figuraActual.desplazamientoVertical(false);
 
-	if (m_tauler.colisionaFigura(m_figura))
+	if (m_tauler.colisionaFigura(m_figuraActual))
 	{
-		m_figura.desplazamientoVertical(true);
+		m_figuraActual.desplazamientoVertical(true);
 
-		nFiles = m_tauler.colocaFigura(m_figura);
+		nFiles = m_tauler.colocaFigura(m_figuraActual);
 
-		m_figura.iniciarFigura(NO_FIGURA);
-		m_figura.set_fila_columna(-1, -1);
+		m_figuraActual.iniciarFigura(NO_FIGURA);
+		m_figuraActual.set_fila_columna(-1, -1);
 
 	}
 	return nFiles;
@@ -108,27 +115,21 @@ void Joc::escriuTauler(const string& nomFitxer)
 	fitxer.open(nomFitxer);
 	if (fitxer.is_open())
 	{
-		ColorFigura tauler[MAX_FILES][MAX_COLUMNES];
-		m_tauler.getTauler(tauler);
 
-		for (int i = 0; i < m_figura.getAltura(); i++) {
-			for (int j = 0; j < m_figura.getAnchura(); j++)
-			{
-				if (m_figura.obtenerEstructura(i, j) != 0) {
+		m_tauler.dibuixaFigura(m_figuraActual);
 
-					tauler[m_figura.getFila() + i][m_figura.getColumna() + j] = m_figura.getColor();
-				}
-			}
-		}
-
-		for (int i = 0; i < MAX_FILES; i++)
+		ColorFigura tauler[MAX_FILA][MAX_COL];
+		m_tauler.getValorsTauler(tauler);
+		for (int i = 0; i < MAX_FILA; i++)
 		{
-			for (int j = 0; j < MAX_COLUMNES; j++)
+			for (int j = 0; j < MAX_COL; j++)
 			{
 				fitxer << int(tauler[i][j]) << " ";
 			}
 			fitxer << endl;
 		}
+
 		fitxer.close();
 	}
 }
+
