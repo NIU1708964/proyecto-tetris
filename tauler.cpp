@@ -10,6 +10,10 @@ Tauler::Tauler()
     {
         m_tauler[i][0] = NO_COLOR;
         m_tauler[i][MAX_COLUMNES + 1] = NO_COLOR; //cambio + 2 a + 1
+        if (i < MAX_FILES)
+        {
+            m_lliures[i] = MAX_COLUMNES; //optimizacion
+        }
         for (int j = 0; j < MAX_COLUMNES; j++)
         {
             m_tauler[i][j + 1] = COLOR_NEGRE; //añado + 1
@@ -20,10 +24,6 @@ Tauler::Tauler()
     {
         m_tauler[MAX_FILES][j] = NO_COLOR; //en la fila 8 (index 9) habra un borde
     }
-    for (int i = 0; i < MAX_FILES; i++)
-    {
-        m_lliures[i] = MAX_COLUMNES;
-    } //for2 revisado
 }
 
 void Tauler::inicialitza(ColorFigura tauler[MAX_FILES][MAX_COLUMNES]) 
@@ -43,18 +43,20 @@ void Tauler::inicialitza(ColorFigura tauler[MAX_FILES][MAX_COLUMNES])
 
 bool Tauler::colisionaFigura(const Figura& figura)
 {
-    bool colisionaFigura = false; //elimino int estructura[][]
+    int estructura[MAX_FILES][MAX_COLUMNES];
+    bool colisionaFigura = false; 
     
+    figura.getEstructura(estructura);
+
     int filaTauler = figura.getFila();
     int filaEstructura = 0;
     do
     {
-        int colTauler = figura.getColumna();
+        int colTauler = figura.getColumna() + 1 //añadimos 1
         int colEstructura = 0;
-
         do
         {
-            if (m_tauler[filaTauler][colTauler] != 0) //si en el tablero no hay cero colisiona
+            if ((m_tauler[filaTauler][colTauler] != 0) && (estructura[filaEstructura][colEstructura] != 0)) //si en el tablero no hay cero colisiona
             {
                 colisionaFigura = true;
             }
@@ -67,11 +69,11 @@ bool Tauler::colisionaFigura(const Figura& figura)
     } while (!colisionaFigura && filaEstructura < figura.getAltura());
 
     return colisionaFigura;
-} //revisado ?
+} //revisado 
 
 int Tauler::colocaFigura(const Figura& figura)
 {
-    int estructura[MAX_ALTURA][MAX_ANCHURA];
+    int estructura[MAX_ALTURA][MAX_AMPLADA];
     int numFilesComp = 0;
 
     ColorFigura color = figura.getColor();
@@ -87,7 +89,7 @@ int Tauler::colocaFigura(const Figura& figura)
             if (estructura[filaEstructura][colEstructura] != 0)
             {
                 m_tauler[filaTauler][colTauler] = color;
-                m_lliures[filaTauler]++;
+                m_lliures[filaTauler]--;
                 if (m_lliures[filaTauler] == 0)
                 {
                     numFilesComp++;

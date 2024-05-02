@@ -116,7 +116,7 @@ void Joc::escriuTauler(const string& nomFitxer)
 			{
 				if (m_figura.obtenerEstructura(i, j) != 0) {
 
-					tauler[m_figura.getFila() + i - 1][m_figura.getColumna() + j - 1] = m_figura.getColor();
+					tauler[m_figura.getFila() + i][m_figura.getColumna() + j] = m_figura.getColor();
 				}
 			}
 		}
