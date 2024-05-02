@@ -87,7 +87,7 @@ int Tauler::colocaFigura(const Figura& figura)
             if (estructura[filaEstructura][colEstructura] != 0)
             {
                 m_tauler[filaTauler][colTauler] = color;
-                m_lliures[filaTauler] == 0;
+                m_lliures[filaTauler]++;
                 if (m_lliures[filaTauler] == 0)
                 {
                     numFilesComp++;
@@ -99,6 +99,30 @@ int Tauler::colocaFigura(const Figura& figura)
         filaTauler++;
     }
     return numFilesComp;
+}
+
+void Tauler::dibuixaTauler()
+{
+    ColorFigura color = figura.getColor();
+    int estructura[MAX_FILES][MAX_AMPLADA];
+
+    figura.getEstructura(estructura);
+
+    int filaEstructura = 0;
+    int filaTauler = figura.getFila(); 
+    for (int filaEstructura = 0; filaEstructura < figura.getAltura; filaEstructura++) 
+    {
+        int colTauler = figura.getColumna() + 1;
+        for (int colEstructura = 0; colEstructura < figura.getAnchura; colEstructura++)
+        {
+            if (estructura[filaEstructura][colEstructura] != 0)
+            {
+                m_tauler[filaTauler][colTauler] = color;
+            }
+            colTauler++;
+        }
+        filaTauler++;
+    }
 }
 
 void Tauler::baixa(int fila)

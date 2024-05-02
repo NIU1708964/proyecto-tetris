@@ -118,7 +118,6 @@ void Joc::escriuTauler(const string& nomFitxer)
 
 					tauler[m_figura.getFila() + i - 1][m_figura.getColumna() + j - 1] = m_figura.getColor();
 				}
-
 			}
 		}
 
@@ -130,8 +129,6 @@ void Joc::escriuTauler(const string& nomFitxer)
 			}
 			fitxer << endl;
 		}
-
-
 		fitxer.close();
 	}
 }
