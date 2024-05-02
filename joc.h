@@ -20,7 +20,7 @@ public:
 	Joc() {}
 	void inicialitza(const string& nomFitxer);
 	bool giraFigura(DireccioGir direccio);
-	bool mouFigura(int dirX);
+	bool mouFigura(int direccio);
 	int baixaFigura();
 	void escriuTauler(const string& nomFitxer);
 
@@ -31,6 +31,4 @@ private:
 
 
 };
-
-
 #endif

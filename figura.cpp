@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Figura.h"
+#include "figura.h"
 
 void Figura::figuraVacia() {
 
@@ -193,7 +193,7 @@ void Figura::girar(bool sentido) {
 
 	// Si sentido es true, sera un giro en sentido horario, si es false será en sentido antihorario
 
-	int matriz_transpuesta[MAX_ALTURA][MAX_ANCHURA];
+	int matriz_transpuesta[MAX_ALTURA][MAX_AMPLADA];
 
 	for (int i = 0; i < m_altura; ++i) {
 		for (int j = 0; j < m_anchura; ++j) {

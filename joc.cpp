@@ -2,12 +2,13 @@
 
 #include <fstream>
 
-void Joc::inicialitza(const string & nomFitxer)
+void Joc::inicialitza(const string& nomFitxer)
 {
 	ifstream fitxer;
 	fitxer.open(nomFitxer);
 	if (fitxer.is_open())
 	{
+
 		m_tauler = Tauler();
 
 		int tipus, fila, columna, gir;
@@ -31,18 +32,6 @@ void Joc::inicialitza(const string & nomFitxer)
 				fitxer >> color;
 				taulerInicial[i][j] = ColorFigura(color);
 			}
-
-		for (int i = 0; i < m_figura.getAltura(); i++) {
-			for (int j = 0; j < m_figura.getAnchura(); j++)
-			{
-				if (m_figura.obtenerEstructura(i, j) != 0) {
-
-					taulerInicial[fila + i - 1][columna + j - 1] = m_figura.getColor();
-				}
-
-			}
-		}
-
 
 		m_tauler.inicialitza(taulerInicial);
 
@@ -123,6 +112,18 @@ void Joc::escriuTauler(const string& nomFitxer)
 	{
 		ColorFigura tauler[MAX_FILA][MAX_COL];
 		m_tauler.getTauler(tauler);
+
+		for (int i = 0; i < m_figura.getAltura(); i++) {
+			for (int j = 0; j < m_figura.getAnchura(); j++)
+			{
+				if (m_figura.obtenerEstructura(i, j) != 0) {
+
+					tauler[m_figura.getFila() + i - 1][m_figura.getColumna() + j - 1] = m_figura.getColor();
+				}
+
+			}
+		}
+
 		for (int i = 0; i < MAX_FILA; i++)
 		{
 			for (int j = 0; j < MAX_COL; j++)
@@ -131,6 +132,7 @@ void Joc::escriuTauler(const string& nomFitxer)
 			}
 			fitxer << endl;
 		}
+
 
 		fitxer.close();
 	}

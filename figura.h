@@ -49,7 +49,8 @@ public:
 	int getAltura() const { return m_altura; }
 	int getAnchura() const { return m_anchura; }
 	ColorFigura getColor() const { return colorFigura; }
-	int getEstructura(int m_estructura[MAX_ALTURA][MAX_ANCHURA]) const;
+	void getEstructura(int m_estructura[MAX_ALTURA][MAX_AMPLADA]) const;
+	int obtenerEstructura(int fila, int columna) const { return estructura[fila][columna]; }
 
 
 private:
@@ -60,6 +61,6 @@ private:
 	int m_pos_columna; // Comienza en el max de altura del tablero
 	int m_anchura;
 	int m_altura;
-	int estructura[MAX_ALTURA][MAX_ANCHURA];
+	int estructura[MAX_ALTURA][MAX_AMPLADA];
 
 };

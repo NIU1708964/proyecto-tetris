@@ -17,8 +17,6 @@ public:
 	int colocaFigura(const Figura& figura);
 	void baixa(int fila);
 	void getTauler(ColorFigura tauler[MAX_FILES][MAX_COLUMNES]);
-	void limpiarTauler(const Figura& figura);
-	void implementacioFigura(const Figura& figura);
 
 private:
 
