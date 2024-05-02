@@ -1,7 +1,6 @@
 #ifndef JOC_H
 #define JOC_H
 #include "tauler.h"
-#include "figura.h"
 #include <string>
 using namespace std;
 

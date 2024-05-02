@@ -1,6 +1,6 @@
 #ifndef TAULER_H
 #define TAULER_H
-#include "Figura.h"
+#include "figura.h"
 
 #define MAX_COLUMNES 8
 #define MAX_FILES 8

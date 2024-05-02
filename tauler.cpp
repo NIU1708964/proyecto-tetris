@@ -1,4 +1,4 @@
-#include "Tauler.h"
+#include "tauler.h"
 #include <iostream>
 
 using namespace std;

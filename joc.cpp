@@ -1,5 +1,4 @@
-##include "Joc.h"
-
+#include "joc.h"
 #include <fstream>
 
 void Joc::inicialitza(const string& nomFitxer)
@@ -34,8 +33,6 @@ void Joc::inicialitza(const string& nomFitxer)
 			}
 
 		m_tauler.inicialitza(taulerInicial);
-
-
 		fitxer.close();
 	}
 }
@@ -50,8 +47,6 @@ bool Joc::giraFigura(DireccioGir direccio)
 	else {
 		direccion = false;
 	}
-
-	m_tauler.LimpiarTauler(m_figura);
 	m_figura.girar(direccion);
 	bool colisiona = m_tauler.colisionaFigura(m_figura);
 
@@ -62,7 +57,6 @@ bool Joc::giraFigura(DireccioGir direccio)
 		else
 			direccion = true;
 		m_figura.girar(direccion);
-		m_tauler.ImplementacioFigura(m_figura);
 	}
 	return !colisiona;
 }
@@ -96,7 +90,9 @@ int Joc::baixaFigura()
 	if (m_tauler.colisionaFigura(m_figura))
 	{
 		m_figura.desplazamientoVertical(true);
+
 		nFiles = m_tauler.colocaFigura(m_figura);
+
 		m_figura.iniciarFigura(NO_FIGURA);
 		m_figura.set_fila_columna(-1, -1);
 
