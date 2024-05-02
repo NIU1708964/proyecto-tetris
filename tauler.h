@@ -2,8 +2,8 @@
 #define TAULER_H
 #include "figura.h"
 
-#define MAX_COLUMNES 8
 #define MAX_FILES 8
+#define MAX_COLUMNES 8
 
 using namespace std;
 

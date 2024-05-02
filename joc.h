@@ -4,9 +4,6 @@
 #include <string>
 using namespace std;
 
-#define MAX_FILA 8
-#define MAX_COL 8
-
 typedef enum
 {
 	GIR_HORARI = 0,

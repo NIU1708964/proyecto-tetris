@@ -21,7 +21,7 @@ void Joc::inicialitza(const string& nomFitxer)
 			m_figura.girar(true);
 		}
 
-		ColorFigura taulerInicial[MAX_FILA][MAX_COL];
+		ColorFigura taulerInicial[MAX_FILES][MAX_COLUMNES];
 		int color;
 
 
@@ -48,6 +48,7 @@ bool Joc::giraFigura(DireccioGir direccio)
 		direccion = false;
 	}
 	m_figura.girar(direccion);
+	
 	bool colisiona = m_tauler.colisionaFigura(m_figura);
 
 	if (colisiona)
@@ -56,6 +57,7 @@ bool Joc::giraFigura(DireccioGir direccio)
 			direccion = false;
 		else
 			direccion = true;
+
 		m_figura.girar(direccion);
 	}
 	return !colisiona;
@@ -106,7 +108,7 @@ void Joc::escriuTauler(const string& nomFitxer)
 	fitxer.open(nomFitxer);
 	if (fitxer.is_open())
 	{
-		ColorFigura tauler[MAX_FILA][MAX_COL];
+		ColorFigura tauler[MAX_FILES][MAX_COLUMNES];
 		m_tauler.getTauler(tauler);
 
 		for (int i = 0; i < m_figura.getAltura(); i++) {
@@ -120,9 +122,9 @@ void Joc::escriuTauler(const string& nomFitxer)
 			}
 		}
 
-		for (int i = 0; i < MAX_FILA; i++)
+		for (int i = 0; i < MAX_FILES; i++)
 		{
-			for (int j = 0; j < MAX_COL; j++)
+			for (int j = 0; j < MAX_COLUMNES; j++)
 			{
 				fitxer << int(tauler[i][j]) << " ";
 			}
