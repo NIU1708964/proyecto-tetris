@@ -1,3 +1,6 @@
+#ifndef FIGURA_H
+#define FIGURA_H
+
 #pragma once
 #define MAX_ALTURA 4
 #define MAX_AMPLADA 4
@@ -71,3 +74,4 @@ private:
 	int estructura[MAX_ALTURA][MAX_ANCHURA];
 
 };
+#endif

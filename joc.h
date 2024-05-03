@@ -18,7 +18,7 @@ public:
 
 private:
 	Tauler m_tauler;
-	Figura m_figuraActual;
+	Figura m_figura;
 };
 
 #endif
