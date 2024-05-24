@@ -1,0 +1,19 @@
+﻿  debug.cpp
+  image_png.cpp
+  keyboard.cpp
+  mouse.cpp
+  NFont.cpp
+  SDL_FontCache.cpp
+C:\Users\Alvaro Ruiz\source\repos\TetrisCorreccion\0. C++ Code\Graphic Lib\NFont\SDL_FontCache.cpp(205,25): warning C4309: '=': truncamiento de valor constante
+C:\Users\Alvaro Ruiz\source\repos\TetrisCorreccion\0. C++ Code\Graphic Lib\NFont\SDL_FontCache.cpp(216,25): warning C4309: '=': truncamiento de valor constante
+  sound.cpp
+  sprites.cpp
+  stb_vorbis.cpp
+  video.cpp
+  Partida.cpp
+  GraphicManager.cpp
+C:\Users\Alvaro Ruiz\source\repos\TetrisCorreccion\0. C++ Code\Logic Game\GraphicManager.cpp(35,37): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\TetrisCorreccion\0. C++ Code\Logic Game\GraphicManager.cpp(35,31): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  main.cpp
+  Generando código...
+  MP_Practica.vcxproj -> C:\Users\Alvaro Ruiz\source\repos\TetrisCorreccion\2. Platforms\0. Windows Desktop\Program\MP_Practica.exe
