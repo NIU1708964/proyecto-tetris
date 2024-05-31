@@ -4,16 +4,48 @@
   mouse.cpp
   NFont.cpp
   SDL_FontCache.cpp
-C:\Users\Alvaro Ruiz\source\repos\TetrisCorreccion\0. C++ Code\Graphic Lib\NFont\SDL_FontCache.cpp(205,25): warning C4309: '=': truncamiento de valor constante
-C:\Users\Alvaro Ruiz\source\repos\TetrisCorreccion\0. C++ Code\Graphic Lib\NFont\SDL_FontCache.cpp(216,25): warning C4309: '=': truncamiento de valor constante
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Graphic Lib\NFont\SDL_FontCache.cpp(205,25): warning C4309: '=': truncamiento de valor constante
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Graphic Lib\NFont\SDL_FontCache.cpp(216,25): warning C4309: '=': truncamiento de valor constante
   sound.cpp
   sprites.cpp
   stb_vorbis.cpp
   video.cpp
+  ClasesTEST.cpp
+  Figura.cpp
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Figura.cpp(255,149): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Figura.cpp(255,96): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Figura.cpp(256,152): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Figura.cpp(256,99): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Figura.cpp(257,152): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Figura.cpp(257,99): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Figura.cpp(258,152): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Figura.cpp(258,99): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Figura.cpp(259,153): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Figura.cpp(259,100): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Figura.cpp(260,152): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Figura.cpp(260,99): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Figura.cpp(261,149): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Figura.cpp(261,96): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Joc.cpp
+  main.cpp
   Partida.cpp
   GraphicManager.cpp
-C:\Users\Alvaro Ruiz\source\repos\TetrisCorreccion\0. C++ Code\Logic Game\GraphicManager.cpp(35,37): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Alvaro Ruiz\source\repos\TetrisCorreccion\0. C++ Code\Logic Game\GraphicManager.cpp(35,31): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-  main.cpp
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\GraphicManager.cpp(35,37): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\GraphicManager.cpp(35,31): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  Tauler.cpp
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Tauler.cpp(160,151): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Tauler.cpp(160,110): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Tauler.cpp(161,157): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Tauler.cpp(161,116): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Tauler.cpp(162,157): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Tauler.cpp(162,116): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Tauler.cpp(163,157): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Tauler.cpp(163,116): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Tauler.cpp(164,159): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Tauler.cpp(164,118): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Tauler.cpp(165,157): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Tauler.cpp(165,116): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Tauler.cpp(166,151): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Tauler.cpp(166,110): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
   Generando código...
-  MP_Practica.vcxproj -> C:\Users\Alvaro Ruiz\source\repos\TetrisCorreccion\2. Platforms\0. Windows Desktop\Program\MP_Practica.exe
+  MP_Practica.vcxproj -> C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\2. Platforms\0. Windows Desktop\Program\MP_Practica.exe

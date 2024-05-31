@@ -1,9 +1,9 @@
 #ifndef JOC_H
 #define JOC_H
-#include "Tauler.h"
 #include "Figura.h"
+#include "Tauler.h" 
+#include "GraphicManager.h"
 #include <string>
-using namespace std;
 
 
 class Joc
@@ -15,10 +15,19 @@ public:
 	bool mouFigura(int direccio);
 	int baixaFigura();
 	void escriuTauler(const string& nomFitxer);
+	void DibuixaJoc();
+	bool NovaFigura();
+	int BaixarTot();
+	void ReemplazaFiguraActual(const Figura& reemp); 
+
+	
+
 
 private:
+
 	Tauler m_tauler;
-	Figura m_figura;
+	Figura m_figura;   
+
 };
 
 #endif

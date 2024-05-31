@@ -240,3 +240,31 @@ void Figura::getEstructura(int m_estructura[MAX_ALTURA][MAX_ANCHURA]) const
 		for (int j = 0; j < m_anchura; j++)
 			m_estructura[i][j] = estructura[i][j];
 }
+
+
+void Figura::DibuixarFigura() 
+{
+
+	for (int i = 0; i < m_altura; i++) {
+		for (int j = 0; j < m_anchura; j++) {
+
+			if (estructura[i][j] != COLOR_NEGRE)
+			{
+				switch (tipoFigura)
+				{
+				case FIGURA_O: GraphicManager::getInstance()->drawSprite(GRAFIC_QUADRAT_GROC, POS_X_TAULER + ((m_pos_columna + j) * MIDA_QUADRAT), POS_Y_TAULER + ((m_pos_fila + i - 1) * MIDA_QUADRAT), false); break;
+				case FIGURA_I: GraphicManager::getInstance()->drawSprite(GRAFIC_QUADRAT_BLAUCEL, POS_X_TAULER + ((m_pos_columna + j) * MIDA_QUADRAT), POS_Y_TAULER + ((m_pos_fila + i - 1) * MIDA_QUADRAT), false); break;
+				case FIGURA_T: GraphicManager::getInstance()->drawSprite(GRAFIC_QUADRAT_MAGENTA, POS_X_TAULER + ((m_pos_columna + j) * MIDA_QUADRAT), POS_Y_TAULER + ((m_pos_fila + i - 1) * MIDA_QUADRAT), false); break;
+				case FIGURA_L: GraphicManager::getInstance()->drawSprite(GRAFIC_QUADRAT_TARONJA, POS_X_TAULER + ((m_pos_columna + j) * MIDA_QUADRAT), POS_Y_TAULER + ((m_pos_fila + i - 1) * MIDA_QUADRAT), false); break;
+				case FIGURA_J: GraphicManager::getInstance()->drawSprite(GRAFIC_QUADRAT_BLAUFOSC, POS_X_TAULER + ((m_pos_columna + j) * MIDA_QUADRAT), POS_Y_TAULER + ((m_pos_fila + i - 1) * MIDA_QUADRAT), false); break;
+				case FIGURA_Z: GraphicManager::getInstance()->drawSprite(GRAFIC_QUADRAT_VERMELL, POS_X_TAULER + ((m_pos_columna + j) * MIDA_QUADRAT), POS_Y_TAULER + ((m_pos_fila + i - 1) * MIDA_QUADRAT), false); break;
+				case FIGURA_S: GraphicManager::getInstance()->drawSprite(GRAFIC_QUADRAT_VERD, POS_X_TAULER + ((m_pos_columna + j) * MIDA_QUADRAT), POS_Y_TAULER + ((m_pos_fila + i - 1) * MIDA_QUADRAT), false); break;
+				}
+					  
+			}
+
+		}
+	}
+
+
+}

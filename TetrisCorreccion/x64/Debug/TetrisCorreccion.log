@@ -1,10 +1,6 @@
-﻿  Figura.cpp
-  Joc.cpp
-  main.cpp
-C:\Users\Alvaro Ruiz\source\repos\TetrisCorreccion\main.cpp(204,16): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Alvaro Ruiz\source\repos\TetrisCorreccion\main.cpp(405,16): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Alvaro Ruiz\source\repos\TetrisCorreccion\main.cpp(664,16): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Alvaro Ruiz\source\repos\TetrisCorreccion\main.cpp(817,16): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
-  Tauler.cpp
-  Generando código...
-  TetrisCorreccion.vcxproj -> C:\Users\Alvaro Ruiz\source\repos\TetrisCorreccion\x64\Debug\TetrisCorreccion.exe
+﻿  main.cpp
+C:\Users\alvar\OneDrive\Escritorio\TetrisCorreccion\main.cpp(204,16): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\alvar\OneDrive\Escritorio\TetrisCorreccion\main.cpp(405,16): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\alvar\OneDrive\Escritorio\TetrisCorreccion\main.cpp(664,16): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\alvar\OneDrive\Escritorio\TetrisCorreccion\main.cpp(817,16): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+  TetrisCorreccion.vcxproj -> C:\Users\alvar\OneDrive\Escritorio\TetrisCorreccion\x64\Debug\TetrisCorreccion.exe

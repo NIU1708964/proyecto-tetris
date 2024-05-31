@@ -2,8 +2,8 @@
 #define TAULER_H
 #include "Figura.h"
 
-const int MAX_FILA = 8;
-const int MAX_COL = 8;
+const int MAX_FILA = 21;
+const int MAX_COL = 11;
 
 class Tauler
 {
@@ -19,6 +19,7 @@ public:
     void getTauler(ColorFigura tauler[MAX_FILA][MAX_COL]);
 
     void eliminaFila(int fila);
+    void dibuixaTauler();
 
 private:
 

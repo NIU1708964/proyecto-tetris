@@ -1,4 +1,4 @@
-#include "joc.h"
+#include "0. C++ Code/Logic Game/Joc.h"
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -194,9 +194,9 @@ int main()
 	cout << "Comment :=>> Inicialitzacio del tauler amb figura amb gir" << endl;
 	cout << "Comment :=>> ------------------------------------------------" << endl;
 	cout << "Comment :=>> " << endl;
-	joc.inicialitza("./data/test_inicialitzacio_gir.txt");
-	mostraFitxerInicial("./data/test_inicialitzacio_gir.txt");
-	joc.escriuTauler("./data/resultat_inicialitzacio_gir.txt");
+	joc.inicialitza("./data/partida.txt");
+	mostraFitxerInicial("./data/partida.txt");
+	joc.escriuTauler("./data/partida.txt");
 	correcte = comparaResultatPartida("./data/resultat_inicialitzacio_gir.txt", "./data/resultat_esperat_inicialitzacio_gir.txt");
 	if (!correcte)
 		reduccio += 0.5;

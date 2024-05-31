@@ -1,10 +1,9 @@
 ﻿  Figura.cpp
+c1xx : fatal  error C1083: No se puede abrir el archivo origen: '..\Figura.cpp': No such file or directory
   Joc.cpp
-  main.cpp
-C:\Users\Alvaro Ruiz\source\repos\TetrisCorreccion\main.cpp(204,16): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Alvaro Ruiz\source\repos\TetrisCorreccion\main.cpp(405,16): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Alvaro Ruiz\source\repos\TetrisCorreccion\main.cpp(664,16): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Alvaro Ruiz\source\repos\TetrisCorreccion\main.cpp(817,16): warning C4244: '+=': conversión de 'double' a 'float'; posible pérdida de datos
+c1xx : fatal  error C1083: No se puede abrir el archivo origen: '..\Joc.cpp': No such file or directory
   Tauler.cpp
+c1xx : fatal  error C1083: No se puede abrir el archivo origen: '..\Tauler.cpp': No such file or directory
+  main.cpp
+C:\Users\Alvaro Ruiz\source\repos\TetrisCorreccion\main.cpp(1,10): fatal  error C1083: No se puede abrir el archivo incluir: 'joc.h': No such file or directory
   Generando código...
-  TetrisCorreccion.vcxproj -> C:\Users\Alvaro Ruiz\source\repos\TetrisCorreccion\Debug\TetrisCorreccion.exe

@@ -54,4 +54,25 @@ const int N_COL_TAULER = 11;
 const int POS_X_TAULER = 120;
 const int POS_Y_TAULER = 100;
 
+
+
+typedef enum
+{
+    MODE_NORMAL,
+    MODE_TEST
+} ModeJoc;   
+
+
+typedef enum
+{
+    MOVIMENT_ESQUERRA = 0,
+    MOVIMENT_DRETA = 1,
+    MOVIMENT_GIR_HORARI = 2,
+    MOVIMENT_GIR_ANTI_HORARI = 3,
+    MOVIMENT_BAIXA = 4,
+    MOVIMENT_BAIXA_FINAL = 5,
+} TipusMoviment;
+
+
+
 #endif

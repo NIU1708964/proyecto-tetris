@@ -127,15 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\Figura.h" />
-    <ClInclude Include="..\Joc.h" />
-    <ClInclude Include="..\Tauler.h" />
+    <ClCompile Include="..\0. C++ Code\Logic Game\Figura.cpp" />
+    <ClCompile Include="..\0. C++ Code\Logic Game\Joc.cpp" />
+    <ClCompile Include="..\0. C++ Code\Logic Game\Tauler.cpp" />
+    <ClCompile Include="..\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Figura.cpp" />
-    <ClCompile Include="..\Joc.cpp" />
-    <ClCompile Include="..\main.cpp" />
-    <ClCompile Include="..\Tauler.cpp" />
+    <ClInclude Include="..\0. C++ Code\Logic Game\Figura.h" />
+    <ClInclude Include="..\0. C++ Code\Logic Game\Joc.h" />
+    <ClInclude Include="..\0. C++ Code\Logic Game\Tauler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,6 @@
 #include "Joc.h"
 #include <fstream>
+
 using namespace std;
 
 void Joc::inicialitza(const string& nomFitxer)
@@ -36,6 +37,8 @@ void Joc::inicialitza(const string& nomFitxer)
 		fitxer.close();
 	}
 }
+
+
 
 bool Joc::giraFigura(DireccioGir direccio)
 {
@@ -101,7 +104,7 @@ bool Joc::mouFigura(int direccio)
 
 int Joc::baixaFigura()
 {
-	int nFiles = 0;
+	int nFiles = -1;
 
 	m_figura.desplazamientoVertical(false);
 
@@ -118,9 +121,6 @@ int Joc::baixaFigura()
 	return nFiles;
 
 }
-
-
-
 
 void Joc::escriuTauler(const string& nomFitxer)
 {
@@ -148,3 +148,81 @@ void Joc::escriuTauler(const string& nomFitxer)
 
 	}
 }
+
+void Joc::DibuixaJoc() {
+
+	m_tauler.dibuixaTauler();
+	m_figura.DibuixarFigura(); 
+
+}
+
+
+bool Joc::NovaFigura() {
+
+
+	int Figura = (rand() % N_TIPUS_FIGURES) + 1;
+	int Columna;
+	int GiroInicial = (rand() % 4);
+
+	TipusFigura NovaFigura = TipusFigura(Figura);
+
+	switch (NovaFigura) {
+
+	case FIGURA_O: Columna = (rand() % (N_COL_TAULER - 1)) + 1; break;
+	case FIGURA_I: Columna = (rand() % (N_COL_TAULER - 3)) + 1; break;
+	default: Columna = (rand() % (N_COL_TAULER - 2)) + 1; break;
+
+	}
+
+	m_figura.iniciarFigura(NovaFigura);
+	m_figura.set_fila_columna(1, Columna);
+
+
+	for (int i = 0; i < GiroInicial; i++)
+	{
+		m_figura.girar(true);
+
+	}
+
+	bool colision = m_tauler.colisionaFigura(m_figura);
+
+	return colision;
+
+}
+
+int Joc::BaixarTot() {
+
+	bool Baixar = true;
+	int nFiles = 0;
+
+	while (Baixar) { 
+
+		m_figura.desplazamientoVertical(false);
+
+		if (m_tauler.colisionaFigura(m_figura)) 
+		{
+			m_figura.desplazamientoVertical(true); 
+
+			nFiles = m_tauler.colocaFigura(m_figura); 
+			m_figura.figuraVacia();
+
+			Baixar = false;
+		}
+
+
+	}
+
+	return nFiles; 
+}
+
+void Joc::ReemplazaFiguraActual(const Figura& reemp) {
+
+	m_figura = reemp;
+	for (int i = 0; i < reemp.getGir(); i++) {
+
+		m_figura.girar(true);   
+
+	}
+		
+}
+

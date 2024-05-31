@@ -141,3 +141,35 @@ void Tauler::eliminaFila(int fila)
 
     }
 }
+
+
+
+void Tauler::dibuixaTauler() {
+
+    GraphicManager::getInstance()->drawSprite(GRAFIC_FONS, 0, 0, false); GraphicManager::getInstance()->drawSprite(GRAFIC_FONS, 0, 0, false);
+    GraphicManager::getInstance()->drawSprite(GRAFIC_TAULER, POS_X_TAULER, POS_Y_TAULER, false); 
+
+    for (int i = 0; i < MAX_FILA; i++) {
+
+        for (int j = 0; j < MAX_COL; j++) 
+        {
+            if (m_tauler[i][j + 1] != COLOR_NEGRE) {
+
+                switch (m_tauler[i][j + 1])
+                {
+                case COLOR_GROC: GraphicManager::getInstance()->drawSprite(GRAFIC_QUADRAT_GROC, POS_X_TAULER + ((j + 1) * MIDA_QUADRAT), POS_Y_TAULER + (i * MIDA_QUADRAT), false); break; 
+                case COLOR_BLAUCEL: GraphicManager::getInstance()->drawSprite(GRAFIC_QUADRAT_BLAUCEL, POS_X_TAULER + ((j + 1) * MIDA_QUADRAT), POS_Y_TAULER + (i * MIDA_QUADRAT), false); break;
+                case COLOR_MAGENTA: GraphicManager::getInstance()->drawSprite(GRAFIC_QUADRAT_MAGENTA, POS_X_TAULER + ((j + 1) * MIDA_QUADRAT), POS_Y_TAULER + (i * MIDA_QUADRAT), false); break; 
+                case COLOR_TARONJA: GraphicManager::getInstance()->drawSprite(GRAFIC_QUADRAT_TARONJA, POS_X_TAULER + ((j + 1) * MIDA_QUADRAT), POS_Y_TAULER + (i * MIDA_QUADRAT), false); break;
+                case COLOR_BLAUFOSC: GraphicManager::getInstance()->drawSprite(GRAFIC_QUADRAT_BLAUFOSC, POS_X_TAULER + ((j + 1) * MIDA_QUADRAT), POS_Y_TAULER + (i * MIDA_QUADRAT), false); break;
+                case COLOR_VERMELL: GraphicManager::getInstance()->drawSprite(GRAFIC_QUADRAT_VERMELL, POS_X_TAULER + ((j + 1) * MIDA_QUADRAT), POS_Y_TAULER + (i * MIDA_QUADRAT), false); break; 
+                case COLOR_VERD: GraphicManager::getInstance()->drawSprite(GRAFIC_QUADRAT_VERD, POS_X_TAULER + ((j + 1) * MIDA_QUADRAT), POS_Y_TAULER + (i * MIDA_QUADRAT), false); break;
+                }
+
+            }
+
+        }
+
+    }
+
+}

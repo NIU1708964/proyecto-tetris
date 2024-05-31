@@ -28,10 +28,14 @@
 
 #include "./Partida.h"
 #include "./InfoJoc.h"
+#include <iostream>
+
+using namespace std;
 
 
 int main(int argc, const char* argv[])
 {
+
     //Instruccions necesaries per poder incloure la llibreria i que trobi el main
     SDL_SetMainReady();
     SDL_Init(SDL_INIT_VIDEO);
@@ -41,7 +45,9 @@ int main(int argc, const char* argv[])
     //Mostrem la finestra grafica
     pantalla.show();
 
-    Partida game;
+    Partida game; 
+    game.inicialitza(MODE_TEST, "./data/Games/partida.txt", "./data/Games/figures.txt", "./data/Games/moviments.txt"); 
+
 
     Uint64 NOW = SDL_GetPerformanceCounter();
     Uint64 LAST = 0;
@@ -55,12 +61,16 @@ int main(int argc, const char* argv[])
         // Captura tots els events de ratolí i teclat de l'ultim cicle
         pantalla.processEvents();
 
-        game.actualitza(deltaTime);
+    
+        game.actualitza(MODE_TEST, 0.0025);
+        game.MostrarPuntuacio_Nivell(); 
 
+       
         // Actualitza la pantalla
         pantalla.update();
 
-    } while (!Keyboard_GetKeyTrg(KEYBOARD_ESCAPE));
+
+    } while (!Keyboard_GetKeyTrg(KEYBOARD_ESCAPE) && !game.GetFinal());
     // Sortim del bucle si pressionem ESC
 
     //Instruccio necesaria per alliberar els recursos de la llibreria 
