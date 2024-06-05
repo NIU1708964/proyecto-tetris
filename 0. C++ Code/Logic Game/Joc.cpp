@@ -9,8 +9,6 @@ void Joc::inicialitza(const string& nomFitxer)
 	fitxer.open(nomFitxer);
 	if (fitxer.is_open())
 	{
-
-
 		int tipus, fila, columna, gir;
 		fitxer >> tipus >> fila >> columna >> gir;
 
@@ -153,7 +151,6 @@ void Joc::DibuixaJoc() {
 
 	m_tauler.dibuixaTauler();
 	m_figura.DibuixarFigura(); 
-
 }
 
 
@@ -176,7 +173,6 @@ bool Joc::NovaFigura() {
 
 	m_figura.iniciarFigura(NovaFigura);
 	m_figura.set_fila_columna(1, Columna);
-
 
 	for (int i = 0; i < GiroInicial; i++)
 	{

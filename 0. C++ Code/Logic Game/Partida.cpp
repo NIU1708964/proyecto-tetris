@@ -2,12 +2,7 @@
 #include "InfoJoc.h"
 #include "GraphicManager.h"
 
-
-
-
-
 void Partida::inicialitza(int mode, const string& fitxerInicial, const string& fitxerFigures, const string& fitxerMoviments){ 
-
 	
 
 	m_mode = mode;
@@ -19,13 +14,10 @@ void Partida::inicialitza(int mode, const string& fitxerInicial, const string& f
 
 	primeroF = nullptr;
 	primeroM = nullptr;
-
+	
 
 	Figuras = primeroF;
 	Movimientos = primeroM;
-
-
-
 
 
 	if (m_mode == MODE_TEST)
@@ -39,24 +31,16 @@ void Partida::inicialitza(int mode, const string& fitxerInicial, const string& f
 
 		Figuras = primeroF;
 		Movimientos = primeroM;
-		
-
-
-		//AGREGAR COSAS DE LISTAS DINAMICAS CON NODOS ENLAZADOS(MIRARLAS)
 	}
 	else if (mode == MODE_NORMAL) {
 
 		final = m_joc.NovaFigura(); 
 
 	}
-
-
 }
 
+void Partida::actualitza(double deltaTime) { 
 
-void Partida::actualitza(int mode, double deltaTime) { 
-
-	m_mode = mode;
 	int FilesCompletades=-1;
 
 	NivellActualitzacio();
@@ -84,7 +68,6 @@ void Partida::actualitza(int mode, double deltaTime) {
 			puntuacio_actual += COLOCAR_FIGURA;
 			final=m_joc.NovaFigura();   
 			tiempo = 0.0;
-
 
 		}
 		else {
@@ -121,7 +104,6 @@ void Partida::actualitza(int mode, double deltaTime) {
 		{
 			nivell_actual++;
 			velocitat_actual *= AUGMENT_VELOCITAT;
-
 		}
 
 		m_joc.DibuixaJoc();
@@ -159,9 +141,6 @@ void Partida::actualitza(int mode, double deltaTime) {
 						Figura aux = Figuras->getValor(); 
 						m_joc.ReemplazaFiguraActual(aux);
 						Figuras = Figuras->getNext(); 
-
-						   
-
 					}
 					break;
 				case MOVIMENT_BAIXA:
@@ -180,19 +159,12 @@ void Partida::actualitza(int mode, double deltaTime) {
 
 
 						}
-
 					}
-
-
-
 				}
-
-
-
 			}
-
-
-
+			else if (Movimientos == nullptr) {
+				final = true;
+			}
 		}
 
 		switch (FilesCompletades)
@@ -204,11 +176,14 @@ void Partida::actualitza(int mode, double deltaTime) {
 
 		}
 
-
-
 		m_joc.DibuixaJoc();
-	
 
+	}
+
+	if (final)
+	{
+		string Final = "GAME OVER";
+		GraphicManager::getInstance()->drawFont(FONT_WHITE_30, 65, 300, 2.5, Final);
 	}
 
 }
@@ -217,14 +192,11 @@ void Partida::actualitza(int mode, double deltaTime) {
 void Partida::MostrarPuntuacio_Nivell()
 {
 
-	string msg = "Puntuacio: " + to_string(puntuacio_actual) + ",     Nivell: " + to_string(nivell_actual);  
+	string msg = "Puntuacio: " + to_string(puntuacio_actual) + "      Nivell: " + to_string(nivell_actual);  
 	GraphicManager::getInstance()->drawFont(FONT_WHITE_30, POS_X_TAULER, POS_Y_TAULER - 50, 1.0, msg); 
 
 }
 
-
-
-// AGREGAR LO DE LAS LISTAS CON NODOS
 
 void Partida::LLegirFigures(const string& fitxerFigures) {
 
@@ -336,7 +308,5 @@ void Partida::NivellActualitzacio() {
 	{
 		nivell_actual++;
 		velocitat_actual *= AUGMENT_VELOCITAT;
-
 	}
-
 }

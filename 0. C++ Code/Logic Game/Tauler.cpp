@@ -146,7 +146,7 @@ void Tauler::eliminaFila(int fila)
 
 void Tauler::dibuixaTauler() {
 
-    GraphicManager::getInstance()->drawSprite(GRAFIC_FONS, 0, 0, false); GraphicManager::getInstance()->drawSprite(GRAFIC_FONS, 0, 0, false);
+    GraphicManager::getInstance()->drawSprite(GRAFIC_FONS, 0, 0, false); 
     GraphicManager::getInstance()->drawSprite(GRAFIC_TAULER, POS_X_TAULER, POS_Y_TAULER, false); 
 
     for (int i = 0; i < MAX_FILA; i++) {

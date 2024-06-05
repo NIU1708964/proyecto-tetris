@@ -1,6 +1,8 @@
 #ifndef INFO_JOC_H
 #define INFO_JOC_H
 
+#include <conio.h>
+
 typedef enum
 {
     TECLA_ESQUERRA,

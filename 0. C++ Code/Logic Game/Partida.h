@@ -32,11 +32,13 @@ public:
 
     Partida() : m_mode(MODE_NORMAL), tiempo(0.0), puntuacio_actual(0), nivell_actual(1), velocitat_actual(VELOCITAT_PRIMER_NIVEL) {}              
     void inicialitza(int mode, const string& fitxerInicial, const string& fitxerFigures, const string& fitxerMoviments);
-    void actualitza(int mode, double deltaTime);
+    void actualitza(double deltaTime);
     bool GetFinal() const { return final; } 
     void MostrarPuntuacio_Nivell(); 
     void LLegirFigures(const string& fitxerFigures);
     void LLegirMoviments(const string& fitxerMoviments);
+
+    int getPunts() { return puntuacio_actual; }
 
 private:
 

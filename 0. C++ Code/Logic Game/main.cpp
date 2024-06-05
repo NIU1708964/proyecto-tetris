@@ -6,14 +6,13 @@
 
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__) || defined  (_WIN64)
 
-#include <iostream>
 //Definicio necesaria per poder incloure la llibreria i que trobi el main
 #define SDL_MAIN_HANDLED
-#include <windows.h>
 //Llibreria grafica
 #include "../Graphic Lib/libreria.h"
 #include "../Graphic Lib/NFont/NFont.h"
 #include <conio.h>      /* getch */ 
+#include <windows.h>
 
 #elif __APPLE__
 //Llibreria grafica
@@ -29,52 +28,73 @@
 #include "./Partida.h"
 #include "./InfoJoc.h"
 #include <iostream>
+#include "./Tetris.h"
 
 using namespace std;
 
 
 int main(int argc, const char* argv[])
 {
+    cout << "--------------------------" << endl;
+    cout << "**********TETRIS**********" << endl;
+    cout << "--------------------------" << endl;
 
-    //Instruccions necesaries per poder incloure la llibreria i que trobi el main
+    cout << endl;
+
     SDL_SetMainReady();
     SDL_Init(SDL_INIT_VIDEO);
-
-    //Inicialitza un objecte de la classe Screen que s'utilitza per gestionar la finestra grafica
+    
     Screen pantalla(SCREEN_SIZE_X, SCREEN_SIZE_Y);
-    //Mostrem la finestra grafica
-    pantalla.show();
 
-    Partida game; 
-    game.inicialitza(MODE_TEST, "./data/Games/partida.txt", "./data/Games/figures.txt", "./data/Games/moviments.txt"); 
+    Tetris tetris("./data/Games/puntuacions.txt");
 
+    tetris.mostraMenu();
 
-    Uint64 NOW = SDL_GetPerformanceCounter();
-    Uint64 LAST = 0;
-    double deltaTime = 0;
+    int punts;
+    bool sortir = false;
+    string nom, fitxerInicial, fitxerFigures, fitxerMoviments;
+
     do
     {
-        LAST = NOW;
-        NOW = SDL_GetPerformanceCounter();
-        deltaTime = (double)((NOW - LAST) / (double)SDL_GetPerformanceFrequency());
+        char opcio = _getch();
 
-        // Captura tots els events de ratolí i teclat de l'ultim cicle
-        pantalla.processEvents();
+        switch (opcio)
+        {
+        case '1':
+            
+            punts = tetris.juga(pantalla, 0, "", "", ""); 
+            
+            cout << "Introdueix el nom del jugador: "; cin >> nom;
+            tetris.actualitzaPuntuacions(nom, punts);
 
-    
-        game.actualitza(MODE_TEST, 0.0025);
-        game.MostrarPuntuacio_Nivell(); 
+            break;
+        case '2':
+            cout << "Introdueix el nom dels fitxers:" << endl;
+            cout << "Fitxer Inicial: "; cin >> fitxerInicial; 
+            cout << "Fitxer Figures: "; cin >> fitxerInicial;
+            cout << "Fitxer Moviments: "; cin >> fitxerInicial;
+            tetris.juga(pantalla, 1, "./data/Games/" + fitxerInicial, "./data/Games/" + fitxerFigures, "./data/Games/" + fitxerMoviments);
+            break;
+        case '3':
+            tetris.mostraPuntuacions();
+            break;
+        case '4':
+            sortir = true;
 
-       
-        // Actualitza la pantalla
-        pantalla.update();
+            cout << "Sortint del programa...";
+            Sleep(1000);
+            break;
+        default:
+            cout << "ERROR: Opcio no valida.";
+        }
 
+        tetris.mostraMenu();
 
-    } while (!Keyboard_GetKeyTrg(KEYBOARD_ESCAPE) && !game.GetFinal());
-    // Sortim del bucle si pressionem ESC
+        tetris.guardaPuntuacions("./data/Games/puntuacions.txt");
+    } while (!sortir);
 
-    //Instruccio necesaria per alliberar els recursos de la llibreria 
-    SDL_Quit();
+    SDL_Quit;
+
     return 0;
 }
 
