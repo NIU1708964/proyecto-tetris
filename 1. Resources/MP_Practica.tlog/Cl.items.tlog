@@ -1,17 +1,18 @@
-C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Graphic Lib\debug.cpp;C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\1. Resources\debug.obj
-C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Graphic Lib\image_png.cpp;C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\1. Resources\image_png.obj
-C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Graphic Lib\keyboard.cpp;C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\1. Resources\keyboard.obj
-C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Graphic Lib\mouse.cpp;C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\1. Resources\mouse.obj
-C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Graphic Lib\NFont\NFont.cpp;C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\1. Resources\NFont.obj
-C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Graphic Lib\NFont\SDL_FontCache.cpp;C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\1. Resources\SDL_FontCache.obj
-C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Graphic Lib\sound.cpp;C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\1. Resources\sound.obj
-C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Graphic Lib\sprites.cpp;C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\1. Resources\sprites.obj
-C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Graphic Lib\stb_vorbis.cpp;C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\1. Resources\stb_vorbis.obj
-C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Graphic Lib\video.cpp;C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\1. Resources\video.obj
-C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\ClasesTEST.cpp;C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\1. Resources\ClasesTEST.obj
-C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Figura.cpp;C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\1. Resources\Figura.obj
-C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Joc.cpp;C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\1. Resources\Joc.obj
-C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\main.cpp;C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\1. Resources\main.obj
-C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Partida.cpp;C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\1. Resources\Partida.obj
-C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\GraphicManager.cpp;C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\1. Resources\GraphicManager.obj
-C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\0. C++ Code\Logic Game\Tauler.cpp;C:\Users\Alvaro Ruiz\source\repos\NIU1708964\proyecto-tetris\proyecto-tetris\1. Resources\Tauler.obj
+C:\Users\chen\Documents\GitHub\proyecto-tetris\0. C++ Code\Graphic Lib\debug.cpp;C:\Users\chen\Documents\GitHub\proyecto-tetris\1. Resources\debug.obj
+C:\Users\chen\Documents\GitHub\proyecto-tetris\0. C++ Code\Graphic Lib\image_png.cpp;C:\Users\chen\Documents\GitHub\proyecto-tetris\1. Resources\image_png.obj
+C:\Users\chen\Documents\GitHub\proyecto-tetris\0. C++ Code\Graphic Lib\keyboard.cpp;C:\Users\chen\Documents\GitHub\proyecto-tetris\1. Resources\keyboard.obj
+C:\Users\chen\Documents\GitHub\proyecto-tetris\0. C++ Code\Graphic Lib\mouse.cpp;C:\Users\chen\Documents\GitHub\proyecto-tetris\1. Resources\mouse.obj
+C:\Users\chen\Documents\GitHub\proyecto-tetris\0. C++ Code\Graphic Lib\NFont\NFont.cpp;C:\Users\chen\Documents\GitHub\proyecto-tetris\1. Resources\NFont.obj
+C:\Users\chen\Documents\GitHub\proyecto-tetris\0. C++ Code\Graphic Lib\NFont\SDL_FontCache.cpp;C:\Users\chen\Documents\GitHub\proyecto-tetris\1. Resources\SDL_FontCache.obj
+C:\Users\chen\Documents\GitHub\proyecto-tetris\0. C++ Code\Graphic Lib\sound.cpp;C:\Users\chen\Documents\GitHub\proyecto-tetris\1. Resources\sound.obj
+C:\Users\chen\Documents\GitHub\proyecto-tetris\0. C++ Code\Graphic Lib\sprites.cpp;C:\Users\chen\Documents\GitHub\proyecto-tetris\1. Resources\sprites.obj
+C:\Users\chen\Documents\GitHub\proyecto-tetris\0. C++ Code\Graphic Lib\stb_vorbis.cpp;C:\Users\chen\Documents\GitHub\proyecto-tetris\1. Resources\stb_vorbis.obj
+C:\Users\chen\Documents\GitHub\proyecto-tetris\0. C++ Code\Graphic Lib\video.cpp;C:\Users\chen\Documents\GitHub\proyecto-tetris\1. Resources\video.obj
+C:\Users\chen\Documents\GitHub\proyecto-tetris\0. C++ Code\Logic Game\ClasesTEST.cpp;C:\Users\chen\Documents\GitHub\proyecto-tetris\1. Resources\ClasesTEST.obj
+C:\Users\chen\Documents\GitHub\proyecto-tetris\0. C++ Code\Logic Game\Figura.cpp;C:\Users\chen\Documents\GitHub\proyecto-tetris\1. Resources\Figura.obj
+C:\Users\chen\Documents\GitHub\proyecto-tetris\0. C++ Code\Logic Game\Joc.cpp;C:\Users\chen\Documents\GitHub\proyecto-tetris\1. Resources\Joc.obj
+C:\Users\chen\Documents\GitHub\proyecto-tetris\0. C++ Code\Logic Game\main.cpp;C:\Users\chen\Documents\GitHub\proyecto-tetris\1. Resources\main.obj
+C:\Users\chen\Documents\GitHub\proyecto-tetris\0. C++ Code\Logic Game\Partida.cpp;C:\Users\chen\Documents\GitHub\proyecto-tetris\1. Resources\Partida.obj
+C:\Users\chen\Documents\GitHub\proyecto-tetris\0. C++ Code\Logic Game\GraphicManager.cpp;C:\Users\chen\Documents\GitHub\proyecto-tetris\1. Resources\GraphicManager.obj
+C:\Users\chen\Documents\GitHub\proyecto-tetris\0. C++ Code\Logic Game\Tauler.cpp;C:\Users\chen\Documents\GitHub\proyecto-tetris\1. Resources\Tauler.obj
+C:\Users\chen\Documents\GitHub\proyecto-tetris\0. C++ Code\Logic Game\Tetris.cpp;C:\Users\chen\Documents\GitHub\proyecto-tetris\1. Resources\Tetris.obj
